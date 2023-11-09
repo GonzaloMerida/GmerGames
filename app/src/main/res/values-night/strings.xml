@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="welcome" />
+    <string name="hint" />
+    <string name="enter" />
+</resources>
