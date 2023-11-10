@@ -3,4 +3,5 @@
     <string name="welcome" />
     <string name="hint" />
     <string name="enter" />
+    <string name="infoVersion" />
 </resources>

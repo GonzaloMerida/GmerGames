@@ -3,4 +3,5 @@
     <string name="welcome">Welcome to GMERGAMES</string>
     <string name="hint">user</string>
     <string name="enter">ENTER</string>
+    <string name="infoVersion"></string>
 </resources>
