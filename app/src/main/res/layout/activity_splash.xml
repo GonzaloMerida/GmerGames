@@ -9,10 +9,10 @@
 
     <ImageView
         android:id="@+id/ivLoadImage"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="8dp"
         android:layout_weight="1"
-        android:src="@tools:sample/avatars" />
+        android:src="@drawable/gmergames" />
 </androidx.appcompat.widget.LinearLayoutCompat>

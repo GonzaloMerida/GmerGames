@@ -1,7 +1,19 @@
 <resources>
     <string name="app_name">GMERGAMES</string>
-    <string name="welcome">Welcome to GMERGAMES</string>
-    <string name="hint">user</string>
+    <string name="welcome">Bienvenido a GMERGAMES, introduce tu nombre</string>
+    <string name="userHint">user</string>
     <string name="enter">ENTER</string>
-    <string name="infoVersion"></string>
+    <string name="infoVersion">Usuario %s, estás usando la versión 1 de GMERGAMES</string>
+    <string name="contact">CONTACTO</string>
+    <string name="errorSnackbar">Debes ingresar un nombre</string>
+    <string name="activity_paused">La Activity ha sido pausada</string>
+    <string name="activity_restarted">La Activity ha sido reiniciada (Restarted)</string>
+    <string name="activity_started">La Activity ha sido iniciada (Started)</string>
+    <string name="activity_resumed">La Activity ha pasado a primer plano (Resumed)</string>
+    <string name="activity_stopped">La Activity ha sido parada (Stopped)</string>
+    <string name="activity_destroyed">La Activity ha sido destruida (Destroyed)</string>
+    <string name="email_destiny">gmergut660@g.educaand.es</string>
+    <string name="email_subject">Consulta de la app GMERGAMES</string>
+    <string name="email_body">Escribir aquí la consulta</string>
+    <string name="no_email_apps">No existe ninguna app instalada capaz de enviar e-mails</string>
 </resources>

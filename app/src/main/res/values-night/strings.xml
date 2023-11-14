@@ -4,4 +4,9 @@
     <string name="hint" />
     <string name="enter" />
     <string name="infoVersion" />
+    <string name="contact" />
+    <string name="activity_paused">La Activity ha sido pausada</string>
+    <string name="activity_restarted">La Activity ha sido reiniciada (Restarted)</string>
+    <string name="activity_started">La Activity ha sido iniciada (Started)</string>
+    <string name="activity_resumed">La Activity ha pasado a primer plano (Resumed)</string>
 </resources>
