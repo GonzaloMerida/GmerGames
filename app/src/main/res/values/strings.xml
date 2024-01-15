@@ -16,4 +16,5 @@
     <string name="email_subject">Consulta de la app GMERGAMES</string>
     <string name="email_body">Escribir aquí la consulta</string>
     <string name="no_email_apps">No existe ninguna app instalada capaz de enviar e-mails</string>
+    <string name="btnExit">EXIT</string>
 </resources>
