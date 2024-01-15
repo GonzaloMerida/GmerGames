@@ -19,4 +19,8 @@
     <string name="email_body">Escribir aquí la consulta</string>
     <string name="no_email_apps">No existe ninguna app instalada capaz de enviar e-mails</string>
     <string name="btnExit">EXIT</string>
+    <string name="notice">Info de la APP</string>
+    <string name="first_tab">Primera pestaña</string>
+    <string name="second_tab">Segunda pestaña</string>
+    <string name="comenzar">COMENZAR</string>
 </resources>
