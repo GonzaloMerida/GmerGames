@@ -18,7 +18,7 @@ class SplashActivity : AppCompatActivity(){
         val imageView = findViewById<ImageView>(R.id.ivLoadImage)
 
         imageView.postDelayed({
-            val mainIntent = Intent(this@SplashActivity, MainFragment::class.java)
+            val mainIntent = Intent(this@SplashActivity, LoginFragment::class.java)
             startActivity(mainIntent)
             finish()
         }, SPLASH_DISPLAY_LENGTH)
