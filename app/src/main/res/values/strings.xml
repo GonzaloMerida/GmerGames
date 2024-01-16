@@ -23,4 +23,10 @@
     <string name="first_tab">Primera pestaña</string>
     <string name="second_tab">Segunda pestaña</string>
     <string name="comenzar">COMENZAR</string>
+    <string name="item_list_head">Lista de videojuegos:</string>
+    <string name="item_image">Imagen del item</string>
+    <string name="company">Compañía</string>
+    <string name="description">Descripción</string>
+    <string name="companyName">Compañia X</string>
+    <string name="descriptionText">Breve descripción</string>
 </resources>
