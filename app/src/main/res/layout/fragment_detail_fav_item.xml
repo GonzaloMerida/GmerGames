@@ -1,78 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/ivPhoto"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
-        android:layout_marginStart="@dimen/margin"
-        android:layout_marginTop="@dimen/margin"
-        android:contentDescription="@string/item_image"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/capitan_america" />
 
-    <TextView
-        android:id="@+id/tvName"
-        style="@style/title_item_text"
-        app:layout_constraintEnd_toStartOf="@+id/ivDelItem"
-        app:layout_constraintStart_toEndOf="@+id/ivPhoto"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Videojuego X" />
-
-    <TextView
-        android:id="@+id/textCompany"
-        style="@style/important_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/company"
-        app:layout_constraintEnd_toStartOf="@+id/textDescription"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toEndOf="@+id/ivPhoto"
-        app:layout_constraintTop_toBottomOf="@+id/tvName" />
-
-    <TextView
-        android:id="@+id/textDescription"
-        style="@style/important_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:text="@string/description"
-        app:layout_constraintEnd_toStartOf="@+id/ivDelItem"
-        app:layout_constraintStart_toEndOf="@+id/textCompany"
-        app:layout_constraintTop_toTopOf="@+id/textCompany" />
-
-    <TextView
-        android:id="@+id/tvCompany"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tvDescription"
-        app:layout_constraintEnd_toEndOf="@+id/textCompany"
-        app:layout_constraintStart_toStartOf="@+id/textCompany"
-        tools:text="@string/companyName" />
-
-    <TextView
-        android:id="@+id/tvDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="@+id/textDescription"
-        app:layout_constraintStart_toStartOf="@+id/textDescription"
-        app:layout_constraintTop_toBottomOf="@+id/textDescription"
-        tools:text="@string/descriptionText" />
-
-
-    <ImageView
-        android:id="@+id/ivDelItem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="@dimen/margin"
-        app:layout_constraintBottom_toBottomOf="@+id/ivPhoto"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ivPhoto"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
 </androidx.constraintlayout.widget.ConstraintLayout>

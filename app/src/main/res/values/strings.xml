@@ -29,4 +29,8 @@
     <string name="description">Descripción</string>
     <string name="companyName">Compañia X</string>
     <string name="descriptionText">Breve descripción</string>
+    <string name="add_to_favs">Añadir a favoritos</string>
+    <string name="detailed_user_info">Información detallada del usuario</string>
+    <string name="fav_games_head">Lista videojuegos favoritos</string>
+    <string name="delete_from_favs">Eliminar de favoritos</string>
 </resources>
