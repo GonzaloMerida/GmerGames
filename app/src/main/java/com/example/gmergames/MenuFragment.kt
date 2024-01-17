@@ -23,6 +23,12 @@ class MenuFragment : Fragment() {
         binding.btnExit.setOnClickListener {
             findNavController().navigate(R.id.action_menuFragment_to_loginFragment)
         }
+        binding.btnInitiate.setOnClickListener {
+            findNavController().navigate(R.id.action_menuFragment_to_itemListFragment)
+        }
+        binding.btnUserInfo.setOnClickListener {
+            findNavController().navigate(R.id.action_menuFragment_to_userInfoFragment)
+        }
         return binding.root
     }
 

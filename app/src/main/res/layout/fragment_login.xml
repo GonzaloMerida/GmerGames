@@ -8,6 +8,16 @@
     android:orientation="vertical"
     tools:context=".LoginFragment">
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView2"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="parent"/>
+
     <TextView
         android:id="@+id/tvWelcome"
         android:layout_width="match_parent"
@@ -20,9 +30,9 @@
         android:gravity="center"
         android:minHeight="@dimen/min_height"
         android:text="@string/welcome"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/fragmentContainerView2"
+        app:layout_constraintStart_toStartOf="@+id/fragmentContainerView2"
+        app:layout_constraintTop_toTopOf="@+id/fragmentContainerView2" />
 
     <ImageView
         android:id="@+id/ivWelcomeImage"
@@ -37,8 +47,8 @@
         android:minHeight="@dimen/min_height"
         android:src="@drawable/gmergames"
         app:layout_constraintBottom_toTopOf="@+id/etUser"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/fragmentContainerView2"
+        app:layout_constraintStart_toStartOf="@+id/fragmentContainerView2"
         app:layout_constraintTop_toBottomOf="@+id/tvWelcome" />
 
     <EditText
@@ -54,8 +64,8 @@
         android:hint="@string/userHint"
         android:minHeight="@dimen/min_height"
         app:layout_constraintBottom_toTopOf="@+id/btnEnter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/fragmentContainerView2"
+        app:layout_constraintStart_toStartOf="@+id/fragmentContainerView2"/>
 
     <Button
         android:id="@+id/btnEnter"
@@ -69,8 +79,8 @@
         android:gravity="center"
         android:minHeight="@dimen/min_height"
         android:text="@string/enter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/fragmentContainerView2"
+        app:layout_constraintEnd_toEndOf="@+id/fragmentContainerView2"
+        app:layout_constraintStart_toStartOf="@+id/fragmentContainerView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

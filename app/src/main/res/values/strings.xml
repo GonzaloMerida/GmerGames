@@ -6,7 +6,7 @@
     <string name="infoVersion">Usuario %s, estás usando la versión 1 de GMERGAMES
     Esta app es una pequeña biblioteca de videojuegos que podrás indicar si te gustan y
         compartir opiniones</string>
-    <string name="contact">CONTACTO</string>
+    <string name="Iniciar">Iniciar</string>
     <string name="errorSnackbar">Debes ingresar un nombre</string>
     <string name="activity_paused">La Activity ha sido pausada</string>
     <string name="activity_restarted">La Activity ha sido reiniciada (Restarted)</string>
@@ -18,11 +18,11 @@
     <string name="email_subject">Consulta de la app GMERGAMES</string>
     <string name="email_body">Escribir aquí la consulta</string>
     <string name="no_email_apps">No existe ninguna app instalada capaz de enviar e-mails</string>
-    <string name="btnExit">EXIT</string>
+    <string name="btnExit">Salir</string>
     <string name="notice">Info de la APP</string>
     <string name="first_tab">Primera pestaña</string>
     <string name="second_tab">Segunda pestaña</string>
-    <string name="comenzar">COMENZAR</string>
+    <string name="comenzar">Comenzar</string>
     <string name="item_list_head">Lista de videojuegos:</string>
     <string name="item_image">Imagen del item</string>
     <string name="company">Compañía</string>
@@ -33,4 +33,9 @@
     <string name="detailed_user_info">Información detallada del usuario</string>
     <string name="fav_games_head">Lista videojuegos favoritos</string>
     <string name="delete_from_favs">Eliminar de favoritos</string>
+    <string name="detail_fav_item_list">Detalle lista de favoritos</string>
+    <string name="go_back">Volver</string>
+    <string name="go_to_favs">Ver favoritos</string>
+    <string name="go_to_item_detail">Ver detalles</string>
+    <string name="view_user">Ver Usuario</string>
 </resources>

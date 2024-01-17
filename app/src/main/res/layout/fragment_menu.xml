@@ -20,20 +20,20 @@
         android:gravity="center"
         android:minHeight="@dimen/min_height"
         android:text="@string/infoVersion"
-        app:layout_constraintBottom_toTopOf="@+id/btnContact"
+        app:layout_constraintBottom_toTopOf="@+id/btnInitiate"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btnContact"
+        android:id="@+id/btnInitiate"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_gravity="center"
         android:layout_margin="8dp"
         android:layout_marginStart="@dimen/margin"
-        android:minHeight="@dimen/min_height"
-        android:text="@string/contact"
+        android:layout_marginEnd="@dimen/margin"
+        android:text="@string/Iniciar"
         app:layout_constraintBaseline_toBaselineOf="@+id/btnExit"
         app:layout_constraintEnd_toStartOf="@+id/btnExit"
         app:layout_constraintStart_toStartOf="parent" />
@@ -43,9 +43,21 @@
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_margin="@dimen/margin"
-        android:layout_marginEnd="@dimen/margin"
+        android:layout_marginStart="@dimen/margin"
         android:layout_marginBottom="@dimen/margin"
         android:text="@string/btnExit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnInitiate" />
+
+    <Button
+        android:id="@+id/btnUserInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/margin"
+        android:layout_marginEnd="@dimen/margin"
+        android:layout_marginBottom="@dimen/margin"
+        android:text="@string/view_user"
+        app:layout_constraintStart_toEndOf="@+id/btnExit"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,9 +8,8 @@
     tools:context=".ItemListFragment">
 
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/tvFavsHead"
+        android:id="@+id/tvDetailFavsHead"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin"
@@ -22,26 +21,56 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvItems"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin"
         android:layout_marginTop="@dimen/margin"
         android:layout_marginEnd="@dimen/margin"
         android:layout_marginBottom="@dimen/margin"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnAddToFavorites"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvFavsHead" />
+        app:layout_constraintTop_toBottomOf="@+id/tvDetailFavsHead" />
 
     <Button
-        android:id="@+id/btnDelFromFavs"
+        android:id="@+id/btnAddToFavorites"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin"
         android:layout_marginEnd="@dimen/margin"
-        android:layout_marginBottom="@dimen/margin"
         android:text="@string/add_to_favs"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnGoToFavs"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <Button
+        android:id="@+id/btnGoToFavs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin"
+        android:layout_marginBottom="@dimen/margin"
+        android:text="@string/go_to_favs"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/btnAddToFavorites" />
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin"
+        android:layout_marginBottom="@dimen/margin"
+        android:text="@string/go_back"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnGoToFavs"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnGoToFavs"/>
+
+    <Button
+        android:id="@+id/btnViewItemDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/min_height"
+        android:text="@string/go_to_item_detail"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAddToFavorites" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

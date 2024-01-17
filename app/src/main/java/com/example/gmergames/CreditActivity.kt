@@ -18,7 +18,7 @@ class CreditActivity : AppCompatActivity() {
         setContentView(R.layout.activity_credit)
 
         tvInfo = findViewById<TextView>(R.id.tvInfo)
-        btnContact = findViewById<Button>(R.id.btnContact)
+        btnContact = findViewById<Button>(R.id.btnInitiate)
 
         val userName = intent.getStringExtra(MainActivity.enteredUserName)
         tvInfo.text = getString(R.string.infoVersion, userName)

@@ -33,6 +33,16 @@
         <action
             android:id="@+id/action_menuFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_itemListFragment"
+            app:destination="@id/itemListFragment"
+            app:popUpTo="@id/menuFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_menuFragment_to_userInfoFragment"
+            app:destination="@id/userInfoFragment"
+            app:popUpTo="@id/menuFragment"
+            app:popUpToInclusive="false" />
     </fragment>
     <fragment
         android:id="@+id/noticeFragment"
@@ -41,6 +51,66 @@
         tools:layout="@layout/fragment_notice" >
         <action
             android:id="@+id/action_noticeFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFavItemFragment"
+        android:name="com.example.gmergames.DetailFavItemFragment"
+        android:label="fragment_detail_fav_item"
+        tools:layout="@layout/fragment_detail_fav_item" >
+        <action
+            android:id="@+id/action_detailFavItemFragment_to_favItemListFragment"
+            app:destination="@id/favItemListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemListFragment"
+        android:name="com.example.gmergames.ItemListFragment"
+        android:label="fragment_item_list"
+        tools:layout="@layout/fragment_item_list" >
+        <action
+            android:id="@+id/action_itemListFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_itemListFragment_to_favItemListFragment"
+            app:destination="@id/favItemListFragment"
+            app:popUpTo="@id/itemListFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_itemListFragment_to_detailItemFragment"
+            app:destination="@id/detailItemFragment"
+            app:popUpTo="@id/itemListFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/favItemListFragment"
+        android:name="com.example.gmergames.FavItemListFragment"
+        android:label="fragment_fav_item_list"
+        tools:layout="@layout/fragment_fav_item_list" >
+        <action
+            android:id="@+id/action_favItemListFragment_to_itemListFragment"
+            app:destination="@id/itemListFragment" />
+        <action
+            android:id="@+id/action_favItemListFragment_to_detailFavItemFragment"
+            app:destination="@id/detailFavItemFragment"
+            app:popUpTo="@id/itemListFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailItemFragment"
+        android:name="com.example.gmergames.DetailItemFragment"
+        android:label="fragment_detail_item"
+        tools:layout="@layout/fragment_detail_item" >
+        <action
+            android:id="@+id/action_detailItemFragment_to_itemListFragment"
+            app:destination="@id/itemListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userInfoFragment"
+        android:name="com.example.gmergames.UserInfoFragment"
+        android:label="fragment_user_info"
+        tools:layout="@layout/fragment_user_info" >
+        <action
+            android:id="@+id/action_userInfoFragment_to_menuFragment"
             app:destination="@id/menuFragment" />
     </fragment>
 </navigation>
