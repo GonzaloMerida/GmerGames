@@ -9,8 +9,6 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import com.example.gmergames.databinding.FragmentNoticeBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 //FRAMGENTO QUE CONTIENE EL VIEWPAGER.
 //EN LA PARTE INFERIOR ESTÁ DECLARADA LA CLASE ADAPTADOR DEL VIEWPAGER
 class NoticeFragment : Fragment() {
