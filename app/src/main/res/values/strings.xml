@@ -38,4 +38,5 @@
     <string name="go_to_favs">Ver favoritos</string>
     <string name="go_to_item_detail">Ver detalles</string>
     <string name="view_user">Ver Usuario</string>
+    <string name="btn_begin">COMENZAR</string>
 </resources>
