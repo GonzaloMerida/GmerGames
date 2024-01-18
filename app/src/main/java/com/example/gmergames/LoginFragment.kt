@@ -39,11 +39,11 @@ class LoginFragment : Fragment() {
         return binding.root
     }
 
-    /**
-     * El parámetro view es la vista donde se mostrará el snackBar
-     * El parámetro message, es un string con el mensaje de error que se le mostrará en el
-     * snackBar
-     */
+    ///**
+     //* El parámetro view es la vista donde se mostrará el snackBar
+     //* El parámetro message, es un string con el mensaje de error que se le mostrará en el
+     //* snackBar
+     //*/
     //private fun showErrorSnackbar(view: View, message: String) {
         //creación del objeto Snackbar indicando la vista en la que se mostrará
         //el mensaje que mostrará y la duración del snackBar
