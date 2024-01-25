@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="welcome" />
-    <string name="enter" />
-    <string name="infoVersion" />
+    <string name="welcome" >Welcome to GMERGAMES, introduce your name, please</string>
+    <string name="enter" >ENTER</string>
+    <string name="infoVersion" >User %s, you are using version 1 of GMERGAMES</string>
     <string name="contact" />
-    <string name="activity_paused">La Activity ha sido pausada</string>
-    <string name="activity_restarted">La Activity ha sido reiniciada (Restarted)</string>
-    <string name="activity_started">La Activity ha sido iniciada (Started)</string>
-    <string name="activity_resumed">La Activity ha pasado a primer plano (Resumed)</string>
+    <string name="activity_paused">The Main Activity has been paused</string>
+    <string name="activity_restarted">The Main Activity has been restarted</string>
+    <string name="activity_started">The Main Activity has been started</string>
+    <string name="activity_resumed">The Main Activity has been resumed</string>
     <string name="btnExit">EXIT</string>
 </resources>
