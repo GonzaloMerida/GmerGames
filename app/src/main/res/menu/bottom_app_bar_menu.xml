@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_discover"
+        android:icon="@android:drawable/ic_menu_gallery"
+        android:title="@string/discover" />
+
+    <item
+        android:id="@+id/action_favs"
+        android:icon="@android:drawable/btn_star_big_on"
+        android:title="@string/go_to_favs_bottom_bar" />
+
+    <item
+        android:id="@+id/action_user_info"
+        android:icon="@android:drawable/ic_menu_myplaces"
+        android:title="@string/personal_user_info" />
+</menu>

@@ -20,6 +20,15 @@
             app:destination="@id/noticeFragment"
             app:popUpTo="@id/loginFragment"
             app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_loginFragment_to_itemListFragment"
+            app:destination="@id/itemListFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_favItemListFragment"
+            app:destination="@id/favItemListFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_userInfoFragment"
+            app:destination="@id/userInfoFragment" />
     </fragment>
     <fragment
         android:id="@+id/menuFragment"

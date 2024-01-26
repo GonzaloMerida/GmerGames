@@ -11,6 +11,8 @@ import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.gmergames.databinding.FragmentLoginBinding
+import com.google.android.material.bottomappbar.BottomAppBar
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 
 class LoginFragment : Fragment() {
@@ -34,6 +36,29 @@ class LoginFragment : Fragment() {
 
         binding.btnEnter.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_menuFragment)
+        }
+
+        binding.bottomAppBar.setOnMenuItemClickListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.action_discover -> {
+                    findNavController().navigate(R.id.action_loginFragment_to_itemListFragment)
+                    true
+                }
+                R.id.action_favs -> {
+                    findNavController().navigate(R.id.action_loginFragment_to_favItemListFragment)
+                    true
+                }
+                R.id.action_user_info -> {
+                    findNavController().navigate(R.id.action_loginFragment_to_userInfoFragment)
+                    true
+                }
+                else -> false
+            }
+        }
+
+        binding.fab.setOnClickListener {
+            // Handle FloatingActionButton click here
+            Snackbar.make(requireView(), "FloatingActionButton clicked", Snackbar.LENGTH_SHORT).show()
         }
 
         return binding.root

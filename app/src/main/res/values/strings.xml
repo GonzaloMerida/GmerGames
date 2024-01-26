@@ -3,9 +3,7 @@
     <string name="welcome">Bienvenido a GMERGAMES, introduce tu nombre</string>
     <string name="userHint">user</string>
     <string name="enter">ENTER</string>
-    <string name="infoVersion">Usuario %s, estás usando la versión 1 de GMERGAMES
-    Esta app es una pequeña biblioteca de videojuegos que podrás indicar si te gustan y
-        compartir opiniones</string>
+    <string name="infoVersion">User %s, you are using version 1 of GMERGAMES. This app is a little library of videogames in which you could like and share opinions about them</string>
     <string name="Iniciar">Start</string>
     <string name="errorSnackbar">You must introduce a name</string>
     <string name="activity_paused">The Main Activity has been paused</string>
@@ -39,4 +37,8 @@
     <string name="go_to_item_detail">View details</string>
     <string name="view_user">View user</string>
     <string name="btn_begin">BEGIN</string>
+    <string name="discover">Discover</string>
+    <string name="go_to_favs_bottom_bar">Go to favs</string>
+    <string name="personal_user_info">User info</string>
+    <string name="menu">Menu</string>
 </resources>

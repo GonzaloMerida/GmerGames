@@ -39,4 +39,8 @@
     <string name="go_to_item_detail">Ver detalles</string>
     <string name="view_user">Ver Usuario</string>
     <string name="btn_begin">COMENZAR</string>
+    <string name="discover">Descubrir</string>
+    <string name="go_to_favs_bottom_bar">Favoritos</string>
+    <string name="personal_user_info">Información de usuario</string>
+    <string name="menu">Menú</string>
 </resources>
