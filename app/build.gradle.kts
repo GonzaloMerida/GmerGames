@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.example.gmergames"
-    compileSdk = 34
+    compileSdk = 32
 
     viewBinding{
         enable = true
@@ -15,7 +15,7 @@ android {
     defaultConfig {
         applicationId = "com.example.gmergames"
         minSdk = 26
-        targetSdk = 33
+        targetSdk = 32
         versionCode = 1
         versionName = "1.0"
 
@@ -54,4 +54,19 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation("androidx.cardview:cardview:1.0.0")
+
+    //Retrofit
+    implementation ("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    //Corrutinas
+    implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.0")
+    //Glide - carga de imágenes
+    implementation ("com.github.bumptech.glide:glide:4.13.0")
+    //IGDB api
+    implementation ("io.github.husnjak:igdb-api-jvm:1.1.0")
+
+    //DATASTORE
+    implementation("androidx.datastore:datastore:1.0.0")
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
 }

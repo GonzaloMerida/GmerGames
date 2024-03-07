@@ -1,12 +1,12 @@
-package com.example.gmergames
+package com.example.gmergames.screens.detailFavItem
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
 import androidx.navigation.fragment.findNavController
+import com.example.gmergames.R
 import com.example.gmergames.databinding.FragmentDetailFavItemBinding
 
 class DetailFavItemFragment : Fragment() {

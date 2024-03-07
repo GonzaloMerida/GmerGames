@@ -1,4 +1,4 @@
-package com.example.gmergames
+package com.example.gmergames.screens.notice
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

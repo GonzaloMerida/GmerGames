@@ -1,4 +1,4 @@
-package com.example.gmergames
+package com.example.gmergames.screens.notice
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.gmergames.databinding.FragmentNoticeBinding
+import com.example.gmergames.R
 import com.example.gmergames.databinding.FragmentTab2NoticeBinding
 
 class Tab2NoticeFragment : Fragment() {

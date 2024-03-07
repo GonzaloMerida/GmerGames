@@ -5,7 +5,7 @@
     android:id="@+id/cl_fragment_item_list"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FavItemListFragment">
+    tools:context=".screens.favItemList.FavItemListFragment">
 
 
     <!-- TODO: Update blank fragment layout -->

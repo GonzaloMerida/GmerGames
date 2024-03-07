@@ -1,4 +1,4 @@
-package com.example.gmergames
+package com.example.gmergames.screens.userInfo
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.gmergames.databinding.FragmentDetailFavItemBinding
+import com.example.gmergames.R
 import com.example.gmergames.databinding.FragmentUserInfoBinding
 
 class UserInfoFragment : Fragment() {

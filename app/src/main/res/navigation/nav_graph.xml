@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.gmergames.LoginFragment"
+        android:name="com.example.gmergames.screens.login.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -32,7 +32,7 @@
     </fragment>
     <fragment
         android:id="@+id/menuFragment"
-        android:name="com.example.gmergames.MenuFragment"
+        android:name="com.example.gmergames.screens.menu.MenuFragment"
         android:label="fragment_menu"
         tools:layout="@layout/fragment_menu">
         <action
@@ -51,7 +51,7 @@
     </fragment>
     <fragment
         android:id="@+id/noticeFragment"
-        android:name="com.example.gmergames.NoticeFragment"
+        android:name="com.example.gmergames.screens.notice.NoticeFragment"
         android:label="fragment_notice"
         tools:layout="@layout/fragment_notice" >
         <action
@@ -60,7 +60,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailFavItemFragment"
-        android:name="com.example.gmergames.DetailFavItemFragment"
+        android:name="com.example.gmergames.screens.detailFavItem.DetailFavItemFragment"
         android:label="fragment_detail_fav_item"
         tools:layout="@layout/fragment_detail_fav_item" >
         <action
@@ -69,7 +69,7 @@
     </fragment>
     <fragment
         android:id="@+id/itemListFragment"
-        android:name="com.example.gmergames.ItemListFragment"
+        android:name="com.example.gmergames.screens.itemList.ItemListFragment"
         android:label="fragment_item_list"
         tools:layout="@layout/fragment_item_list" >
         <action
@@ -88,7 +88,7 @@
     </fragment>
     <fragment
         android:id="@+id/favItemListFragment"
-        android:name="com.example.gmergames.FavItemListFragment"
+        android:name="com.example.gmergames.screens.favItemList.FavItemListFragment"
         android:label="fragment_fav_item_list"
         tools:layout="@layout/fragment_fav_item_list" >
         <action
@@ -102,7 +102,7 @@
     </fragment>
     <fragment
         android:id="@+id/detailItemFragment"
-        android:name="com.example.gmergames.DetailItemFragment"
+        android:name="com.example.gmergames.screens.detailItem.DetailItemFragment"
         android:label="fragment_detail_item"
         tools:layout="@layout/fragment_detail_item" >
         <action
@@ -111,7 +111,7 @@
     </fragment>
     <fragment
         android:id="@+id/userInfoFragment"
-        android:name="com.example.gmergames.UserInfoFragment"
+        android:name="com.example.gmergames.screens.userInfo.UserInfoFragment"
         android:label="fragment_user_info"
         tools:layout="@layout/fragment_user_info" >
         <action

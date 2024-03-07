@@ -1,4 +1,4 @@
-package com.example.gmergames
+package com.example.gmergames.screens.item
 
 data class Item(
     val name : String ="",

@@ -5,7 +5,7 @@
     android:id="@+id/cl_fragment_user_info"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserInfoFragment">
+    tools:context=".screens.userInfo.UserInfoFragment">
 
     <TextView
         android:id="@+id/tvInfoUser"

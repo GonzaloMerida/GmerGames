@@ -1,4 +1,4 @@
-package com.example.gmergames
+package com.example.gmergames.screens.itemList
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,9 +7,11 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.gmergames.R
 import com.example.gmergames.databinding.FragmentItemListBinding
+import com.example.gmergames.datasource.Datasource
+import com.example.gmergames.screens.detailItem.DetailItemFragment
 
 class ItemListFragment : Fragment(){
     private var _binding: FragmentItemListBinding? = null

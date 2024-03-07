@@ -1,4 +1,4 @@
-package com.example.gmergames
+package com.example.gmergames.screens.detailItem
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.gmergames.R
 import com.example.gmergames.databinding.FragmentDetailItemBinding
-import com.example.gmergames.databinding.FragmentFavItemListBinding
 
 class DetailItemFragment : Fragment() {
     private var _binding: FragmentDetailItemBinding? = null

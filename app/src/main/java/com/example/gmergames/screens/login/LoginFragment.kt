@@ -1,18 +1,14 @@
 // LoginFragment.kt
-package com.example.gmergames
+package com.example.gmergames.screens.login
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.InputMethodManager
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.gmergames.R
 import com.example.gmergames.databinding.FragmentLoginBinding
-import com.google.android.material.bottomappbar.BottomAppBar
-import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 
 class LoginFragment : Fragment() {
@@ -25,13 +21,6 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        //btnBegin.setOnClickListener {
-            //val userName = editTextUserName.text.toString()
-            //if (userName.isEmpty()) {
-             //   showErrorSnackbar(editTextUserName, getString(R.string.errorSnackbar))
-            //} else {
-             //   goToCredit(userName)
-            //}
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
 
         binding.btnEnter.setOnClickListener {
