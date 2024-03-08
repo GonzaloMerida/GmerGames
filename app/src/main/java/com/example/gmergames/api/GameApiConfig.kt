@@ -24,7 +24,7 @@ class GameApiConfig {
 
         val token = TwitchAuthenticator.requestTwitchToken(CLIENT_ID, CLIENT_SECRET)
 
-        //mpx3d9dau6xr4ao8ik1bnagbsbdwt9
+        //Bearer y6popj89pbpdkaz6goql4hhm6ojkhm
 
         //Definición de la api de Retrofit2.
         fun provideRetrofit(): Retrofit {

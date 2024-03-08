@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.gmergames.data.Game
 
 
 @Database(
@@ -11,8 +12,7 @@ import androidx.room.RoomDatabase
     version = 1,
     exportSchema = false)
 abstract class LocalDatabase : RoomDatabase() {
-    abstract fun wordsDao() : WordsDao
-    abstract fun gamesDao() : GamesDao
+    abstract fun gamesDao() : GameDao
 
     companion object {
         @Volatile
@@ -20,7 +20,7 @@ abstract class LocalDatabase : RoomDatabase() {
 
         fun getDatabase(context: Context): LocalDatabase {
             return Instance ?: synchronized(this) {
-                Room.databaseBuilder(context, LocalDatabase::class.java, "guess_the_word_database")
+                Room.databaseBuilder(context, LocalDatabase::class.java, "gmergames_database")
                     // Setting this option in your app's database builder means that Room
                     // permanently deletes all data from the tables in your database when it
                     // attempts to perform a migration with no defined migration path.
