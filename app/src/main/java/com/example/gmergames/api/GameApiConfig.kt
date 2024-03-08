@@ -18,9 +18,9 @@ class GameApiConfig {
 
         const val BASE_URL : String = "https://api.igdb.com/v4/"
 
-        const val CLIENT_ID = "bsojm7ecysxbgd14e88qa1j0u12o3c"
+        const val CLIENT_ID = "bp7x7j13buptcuvzj07iyq4n2qygn0"
 
-        const val CLIENT_SECRET = "2gmcsus1f6lofrk77ebthmgjr2w4k0"
+        const val CLIENT_SECRET = "0ctzpnorswusc9syl4mdlghpkor1mc"
 
         val token = TwitchAuthenticator.requestTwitchToken(CLIENT_ID, CLIENT_SECRET)
 
