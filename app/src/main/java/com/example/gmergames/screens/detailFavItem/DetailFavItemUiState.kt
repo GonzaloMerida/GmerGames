@@ -1,4 +1,10 @@
 package com.example.gmergames.screens.detailFavItem
 
-class DetailFavItemUiState {
-}
+import com.example.gmergames.data.Game
+import com.example.gmergames.data.Item
+
+data class DetailFavItemUiState (
+    val isLoading : Boolean = true,
+    val game : Item? = null,
+    val error : Boolean = false
+)

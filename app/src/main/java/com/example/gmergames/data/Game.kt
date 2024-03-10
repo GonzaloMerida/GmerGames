@@ -32,8 +32,19 @@ data class Game (
     @SerializedName("websites") val websites: List<Website>,
     @SerializedName("checksum") val checksum: String,
     @SerializedName("game_localizations") val gameLocalizations: List<LanguageSupport>
-)
+){
+    fun toItem() : Item {
+        return Item(
+            id = id,
+            name = name,
+            summary = summary,
+            genre = genres.toString(),
+            photo = screenshots.get(0).toString()
+        )
+}
 
+
+}
 //data class AgeRating(
 //    @SerializedName("id") val id: Int
 //)

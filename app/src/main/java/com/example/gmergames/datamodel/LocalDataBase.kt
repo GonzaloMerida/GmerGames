@@ -12,7 +12,7 @@ import com.example.gmergames.data.Game
     version = 1,
     exportSchema = false)
 abstract class LocalDatabase : RoomDatabase() {
-    abstract fun gamesDao() : GameDao
+    abstract fun gameDao() : GameDao
 
     companion object {
         @Volatile

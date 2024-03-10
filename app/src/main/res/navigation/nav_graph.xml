@@ -66,6 +66,9 @@
         <action
             android:id="@+id/action_detailFavItemFragment_to_favItemListFragment"
             app:destination="@id/favItemListFragment" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/itemListFragment"
@@ -108,6 +111,9 @@
         <action
             android:id="@+id/action_detailItemFragment_to_itemListFragment"
             app:destination="@id/itemListFragment" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/userInfoFragment"

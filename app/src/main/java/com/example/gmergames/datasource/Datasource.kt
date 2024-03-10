@@ -1,6 +1,6 @@
 package com.example.gmergames.datasource
 
-import com.example.gmergames.screens.item.Item
+import com.example.gmergames.data.Item
 
 object Datasource {
     fun getItemList(): MutableList<Item> {

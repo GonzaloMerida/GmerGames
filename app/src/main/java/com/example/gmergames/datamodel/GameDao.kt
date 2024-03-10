@@ -20,4 +20,10 @@ interface GameDao {
 
     @Query("DELETE FROM game")
     suspend fun clearGames()
+
+    @Query("SELECT * FROM game WHERE GENRE = :userGenre")
+    fun getGamesByGenre(userGenre : String) : List<Game>
+
+    @Query("SELECT * FROM game WHERE PLATFORMS = :userPlatform")
+    fun getGamesByRating(userPlatform: String) : List<Game>
 }

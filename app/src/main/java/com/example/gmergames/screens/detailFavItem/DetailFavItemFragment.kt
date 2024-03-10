@@ -4,24 +4,77 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
+import com.bumptech.glide.Glide
 import com.example.gmergames.R
 import com.example.gmergames.databinding.FragmentDetailFavItemBinding
+import kotlinx.coroutines.launch
 
 class DetailFavItemFragment : Fragment() {
     private var _binding: FragmentDetailFavItemBinding? = null
     private val binding get() = _binding!!
 
+    val args: DetailFavItemFragmentArgs by navArgs()
+
+    private val detailFavItemVM: DetailFavItemVM by viewModels<DetailFavItemVM> { DetailFavItemVM.Factory }
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+        }
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentDetailFavItemBinding.inflate(inflater, container, false)
+        _binding = FragmentDetailItemBinding.inflate(inflater, container, false)
 
-        binding.btnPaTras.setOnClickListener {
-            findNavController().navigate(R.id.action_detailFavItemFragment_to_favItemListFragment)
-        }
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        detailItemVM.setId(args.id)
+        detailItemVM.setGame()
+
+        setCollectors()
+        setListeners()
+    }
+
+    private fun setListeners() {
+        binding.btnIrAtras.setOnClickListener {
+            findNavController().navigate(R.id.action_detailItemFragment_to_itemListFragment)
+        }
+    }
+
+    private fun setCollectors() {
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED) {
+                detailItemVM.uiState.collect { itemState ->
+                    if (!itemState.isLoading) {
+                        binding.pbLoadingDetailItem.isVisible = false
+                        itemState.game?.let {
+                            binding.tvName.text = itemState.game?.name ?: ""
+                            Glide.with(requireContext()).load(it.photo).into(binding.ivPhoto)
+                            binding.tvName.text = it.name
+                            binding.tvCompany.text = it.genre
+                            binding.tvDescription.text = it.summary
+                        }
+                    } else {
+                        binding.pbLoadingDetailItem.isVisible = true
+                    }
+                }
+            }
+        }
     }
 }
