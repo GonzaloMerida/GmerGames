@@ -43,4 +43,11 @@
     <string name="go_to_favs_bottom_bar">Favoritos</string>
     <string name="personal_user_info">Información de usuario</string>
     <string name="menu">Menú</string>
+    <string name="delete">Borrar</string>
+    <string name="support_confirm_delete">¿Quieres eliminar el juego %s?</string>
+    <string name="cancel">Cancelar</string>
+    <string name="accept">Aceptar</string>
+    <string name="item_list">Lista de videojuegos</string>
+    <string name="support_confirm_delete_from_fav">¿Seguro que quieres eliminar el juego % de favoritos?</string>
+    <string name="contact">Contacto</string>
 </resources>

@@ -63,6 +63,8 @@ class DetailItemVM(
         }
     }
 
+
+
     companion object {
 
         val Factory: ViewModelProvider.Factory = object : ViewModelProvider.Factory {

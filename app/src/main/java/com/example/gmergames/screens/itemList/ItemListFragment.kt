@@ -12,12 +12,9 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.gmergames.R
 import com.example.gmergames.adapters.GameAdapter
 import com.example.gmergames.databinding.FragmentItemListBinding
-import com.example.gmergames.datasource.Datasource
-import com.example.gmergames.screens.detailItem.DetailItemFragment
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.coroutines.launch
 
@@ -52,7 +49,8 @@ class ItemListFragment : Fragment(){
        gameAdapter = GameAdapter(
            mutableListOf(),
            onClickGame = { id:Int -> selectGame(id)},
-           onClickDelete = { pos -> confirmDeleteGame(pos)}
+           onClickDelete = { pos -> confirmDeleteGame(pos)},
+           onClickFav = {pos -> addItemToFav(pos)}
        )
         binding.rvItems.adapter = gameAdapter
 
@@ -75,16 +73,15 @@ class ItemListFragment : Fragment(){
 
     private fun setListeners() {
         binding.btnBack.setOnClickListener {
-            findNavController().navigate(R.id.action_itemListFragment_to_menuFragment)
+            val action = ItemListFragmentDirections.actionItemListFragmentToMenuFragment()
+            findNavController().navigate(action)
         }
         binding.btnAddToFavorites.setOnClickListener {
             //Guardar en la base de datos
         }
         binding.btnGoToFavs.setOnClickListener {
-            findNavController().navigate(R.id.action_itemListFragment_to_favItemListFragment)
-        }
-        binding.btnViewItemDetail.setOnClickListener {
-            findNavController().navigate(R.id.action_itemListFragment_to_detailItemFragment)
+            val action = ItemListFragmentDirections.actionItemListFragmentToFavItemListFragment()
+            findNavController().navigate(action)
         }
     }
 
@@ -102,6 +99,11 @@ class ItemListFragment : Fragment(){
                 }
             }
         }
+    }
+
+    private fun addItemToFav(pos : Int){
+        gameListVM.addItemToFav(pos)
+        gameAdapter.notifyItemInserted(pos)
     }
 
     //Dialogo de confirmación del borrado.

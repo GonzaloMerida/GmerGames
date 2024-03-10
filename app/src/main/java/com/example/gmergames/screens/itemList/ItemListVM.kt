@@ -55,6 +55,13 @@ class ItemListVM(
         }
     }
 
+    //TODO cómo añado a favs? Room? DataStore?
+    fun addItemToFav(pos : Int){
+//        _uiState.update { currentState ->
+//
+//        }
+    }
+
     companion object {
 
         const val NUM_GAMES = 10

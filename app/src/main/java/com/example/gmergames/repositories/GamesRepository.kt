@@ -3,15 +3,26 @@ package com.example.gmergames.repositories
 import com.example.gmergames.api.ApiService
 import com.example.gmergames.data.Game
 import com.example.gmergames.data.Item
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
 import retrofit2.Response
 import kotlin.random.Random
 
 class GamesRepository(
-    private val gameApiService: ApiService
+    private val gameApiService: ApiService,
+    private val ioDispatcher : CoroutineDispatcher = Dispatchers.IO
 ) {
     suspend fun getGame(id : Int) : Response<Game>{
         return gameApiService.getGame(id)
     }
+
+//    suspend fun addItemToFav() : Response<>{
+//
+//    }
+//
+//    suspend fun getFavGames() : Response<List<Item>>{
+//
+//    }
 
     suspend fun getItem(id : Int) : Response<Item> {
         var myItem : Item? = null

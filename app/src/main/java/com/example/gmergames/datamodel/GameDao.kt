@@ -3,14 +3,15 @@ package com.example.gmergames.datamodel
 import androidx.room.*
 import androidx.room.OnConflictStrategy
 import com.example.gmergames.data.Game
+import com.example.gmergames.data.Item
 
 @Dao
 interface GameDao {
     @Insert(onConflict = OnConflictStrategy.ABORT)
-    suspend fun insertGame(game : Game)
+    suspend fun insertGame(item : Item)
 
     @Delete
-    suspend fun deleteGame(game : Game)
+    suspend fun deleteGame(item : Item)
 
     @Query("SELECT * FROM game ORDER BY RANDOM()")
     suspend fun getAllGames() : List<Game>?

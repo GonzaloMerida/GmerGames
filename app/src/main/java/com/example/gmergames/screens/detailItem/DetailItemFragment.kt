@@ -53,7 +53,8 @@ class DetailItemFragment : Fragment() {
 
     private fun setListeners() {
         binding.btnIrAtras.setOnClickListener {
-            findNavController().navigate(R.id.action_detailItemFragment_to_itemListFragment)
+            val action = DetailItemFragmentDirections.actionDetailItemFragmentToItemListFragment()
+            findNavController().navigate(action)
         }
     }
 

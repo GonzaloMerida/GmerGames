@@ -13,7 +13,8 @@ import com.example.gmergames.databinding.FragmentDetailItemBinding
 class GameAdapter(
     private val _itemList : MutableList<Item>,
     private val onClickGame : (Int) -> Unit,
-    private val onClickDelete : (Int) -> Unit
+    private val onClickDelete : (Int) -> Unit,
+    private val onClickFav: (Int) -> Unit
 ) : RecyclerView.Adapter<GameAdapter.GameViewHolder>(){
 
     class GameViewHolder (view: View) : RecyclerView.ViewHolder(view){
@@ -22,12 +23,13 @@ class GameAdapter(
         fun bind(
             item : Item,
             onClickGame: (Int) -> Unit,
-            onClickDelete: (Int) -> Unit
+            onClickDelete: (Int) -> Unit,
+            onClickFav : (Int) -> Unit
         ){
             binding.tvName.text = item.name
             binding.tvCompany.text = item.genre
             binding.tvDescription.text = item.summary
-            //TODO Coger fotos con Glide?
+
             val context = binding.ivPhoto.context
             Glide.with(context).load(item.photo).circleCrop().into(binding.ivPhoto)
 
@@ -36,7 +38,11 @@ class GameAdapter(
             }
 
             binding.ivDelItem.setOnClickListener {
-                onClickDelete(adapterPosition)
+                onClickFav(adapterPosition)
+            }
+
+            binding.ivFavItem.setOnClickListener {
+                onClickDelete
             }
         }
     }
@@ -48,7 +54,7 @@ class GameAdapter(
 
     override fun onBindViewHolder(holder: GameViewHolder, position: Int) {
         val hero = _itemList[position]
-        holder.bind(hero, onClickGame, onClickDelete)
+        holder.bind(hero, onClickGame, onClickDelete, onClickFav)
     }
 
     override fun getItemCount(): Int {

@@ -42,8 +42,9 @@
     <string name="personal_user_info">User info</string>
     <string name="menu">Menu</string>
     <string name="delete">Delete</string>
-    <string name="support_confirm_delete">¿Quieres eliminar el juego %s?</string>
-    <string name="cancel">Cancelar</string>
-    <string name="accept">Aceptar</string>
-    <string name="item_list">Lista de videojuegos</string>
+    <string name="support_confirm_delete">¿Do you want to delete the game: %s?</string>
+    <string name="cancel">Cancel</string>
+    <string name="accept">Confirm</string>
+    <string name="item_list">List of videogames</string>
+    <string name="support_confirm_delete_from_fav">Are you sure to del %s from favs?</string>
 </resources>

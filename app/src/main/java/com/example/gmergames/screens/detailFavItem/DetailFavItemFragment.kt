@@ -36,7 +36,7 @@ class DetailFavItemFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentDetailItemBinding.inflate(inflater, container, false)
+        _binding = FragmentDetailFavItemBinding.inflate(inflater, container, false)
 
         return binding.root
     }
@@ -44,25 +44,26 @@ class DetailFavItemFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        detailItemVM.setId(args.id)
-        detailItemVM.setGame()
+        detailFavItemVM.setId(args.id)
+        detailFavItemVM.setGame()
 
         setCollectors()
         setListeners()
     }
 
     private fun setListeners() {
-        binding.btnIrAtras.setOnClickListener {
-            findNavController().navigate(R.id.action_detailItemFragment_to_itemListFragment)
+        binding.btnPaTras.setOnClickListener {
+            val action = DetailFavItemFragmentDirections.actionDetailFavItemFragmentToFavItemListFragment()
+            findNavController().navigate(action)
         }
     }
 
     private fun setCollectors() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
-                detailItemVM.uiState.collect { itemState ->
+                detailFavItemVM.uiState.collect { itemState ->
                     if (!itemState.isLoading) {
-                        binding.pbLoadingDetailItem.isVisible = false
+                        binding.pbLoadingDetailFavItem.isVisible = false
                         itemState.game?.let {
                             binding.tvName.text = itemState.game?.name ?: ""
                             Glide.with(requireContext()).load(it.photo).into(binding.ivPhoto)
@@ -71,7 +72,7 @@ class DetailFavItemFragment : Fragment() {
                             binding.tvDescription.text = it.summary
                         }
                     } else {
-                        binding.pbLoadingDetailItem.isVisible = true
+                        binding.pbLoadingDetailFavItem.isVisible = true
                     }
                 }
             }

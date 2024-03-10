@@ -73,14 +73,4 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnGoToFavs"/>
 
-    <Button
-        android:id="@+id/btnViewItemDetail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:minHeight="@dimen/min_height"
-        android:text="@string/go_to_item_detail"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAddToFavorites" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

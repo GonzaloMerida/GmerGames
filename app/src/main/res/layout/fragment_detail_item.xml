@@ -100,6 +100,15 @@
                 android:layout_marginEnd="@dimen/margin"
                 app:layout_constraintBottom_toBottomOf="@+id/ivPhoto"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivFavItem"
+                app:srcCompat="@android:drawable/ic_delete" />
+            <ImageView
+                android:id="@+id/ivFavItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin"
+                app:layout_constraintBottom_toTopOf="@+id/ivDelItem"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/ivPhoto"
                 app:srcCompat="@android:drawable/btn_star_big_on" />
         </androidx.constraintlayout.widget.ConstraintLayout>
