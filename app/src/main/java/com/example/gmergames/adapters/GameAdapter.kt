@@ -37,11 +37,11 @@ class GameAdapter(
             }
 
             binding.ivDelItem.setOnClickListener {
-                onClickFav(adapterPosition)
+                onClickDelete(adapterPosition)
             }
 
             binding.ivFavItem.setOnClickListener {
-                onClickDelete
+                onClickFav(adapterPosition)
             }
         }
     }
