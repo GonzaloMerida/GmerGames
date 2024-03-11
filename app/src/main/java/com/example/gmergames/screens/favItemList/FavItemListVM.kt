@@ -22,7 +22,6 @@ class FavItemListVM(
         MutableStateFlow(FavItemListUiState())
     val uiState: StateFlow<FavItemListUiState> = _uiState.asStateFlow()
 
-    //TODO arreglar esto
     init {
         viewModelScope.launch(Dispatchers.IO) {
             val myGameResp = gamesRepository.getFavGames()

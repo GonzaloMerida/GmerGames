@@ -52,8 +52,8 @@ class GameAdapter(
     }
 
     override fun onBindViewHolder(holder: GameViewHolder, position: Int) {
-        val hero = _itemList[position]
-        holder.bind(hero, onClickGame, onClickDelete, onClickFav)
+        val item = _itemList[position]
+        holder.bind(item, onClickGame, onClickDelete, onClickFav)
     }
 
     override fun getItemCount(): Int {
