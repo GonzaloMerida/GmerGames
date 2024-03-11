@@ -14,17 +14,17 @@ interface GameDao {
     suspend fun deleteGame(item : Item)
 
     @Query("SELECT * FROM game ORDER BY RANDOM()")
-    suspend fun getAllGames() : List<Game>?
+    suspend fun getAllGames() : List<Item>?
 
     @Query("SELECT * FROM game ORDER BY RANDOM() DESC LIMIT 1")
-    suspend fun getRandomGame() : Game?
+    suspend fun getRandomGame() : Item?
 
     @Query("DELETE FROM game")
     suspend fun clearGames()
 
     @Query("SELECT * FROM game WHERE GENRE = :userGenre")
-    fun getGamesByGenre(userGenre : String) : List<Game>
+    fun getGamesByGenre(userGenre : String) : List<Item>
 
     @Query("SELECT * FROM game WHERE PLATFORMS = :userPlatform")
-    fun getGamesByRating(userPlatform: String) : List<Game>
+    fun getGamesByRating(userPlatform: String) : List<Item>
 }

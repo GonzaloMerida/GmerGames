@@ -76,9 +76,7 @@ class ItemListFragment : Fragment(){
             val action = ItemListFragmentDirections.actionItemListFragmentToMenuFragment()
             findNavController().navigate(action)
         }
-        binding.btnAddToFavorites.setOnClickListener {
-            //Guardar en la base de datos
-        }
+
         binding.btnGoToFavs.setOnClickListener {
             val action = ItemListFragmentDirections.actionItemListFragmentToFavItemListFragment()
             findNavController().navigate(action)

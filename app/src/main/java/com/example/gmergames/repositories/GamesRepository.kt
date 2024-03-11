@@ -3,23 +3,27 @@ package com.example.gmergames.repositories
 import com.example.gmergames.api.ApiService
 import com.example.gmergames.data.Game
 import com.example.gmergames.data.Item
+import com.example.gmergames.datamodel.GameDao
+import com.example.gmergames.datamodel.LocalDatabase
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import retrofit2.Response
 import kotlin.random.Random
 
 class GamesRepository(
     private val gameApiService: ApiService,
-    private val ioDispatcher : CoroutineDispatcher = Dispatchers.IO
+    private val ioDispatcher : CoroutineDispatcher = Dispatchers.IO,
+    private val gameDAO : GameDao
 ) {
     suspend fun getGame(id : Int) : Response<Game>{
         return gameApiService.getGame(id)
     }
 
-//    suspend fun addItemToFav() : Response<>{
-//
-//    }
-//
+    suspend fun addItemToFav(item : Item) = withContext(ioDispatcher){
+        gameDAO.insertGame(item)
+    }
+
 //    suspend fun getFavGames() : Response<List<Item>>{
 //
 //    }

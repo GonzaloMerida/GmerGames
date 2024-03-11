@@ -55,8 +55,12 @@ class ItemListVM(
         }
     }
 
-    //TODO cómo añado a favs? Room? DataStore?
+    //TODO cómo añado a favs?
     fun addItemToFav(pos : Int){
+        viewModelScope.launch(Dispatchers.IO){
+            val gameAdded = _uiState.value.gameList.get(pos)
+            gamesRepository.addItemToFav(gameAdded)
+        }
 //        _uiState.update { currentState ->
 //
 //        }
