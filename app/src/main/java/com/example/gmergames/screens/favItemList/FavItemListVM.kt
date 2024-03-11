@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.CreationExtras
+import com.example.gmergames.data.Item
 import com.example.gmergames.dependencies.MyApplication
 import com.example.gmergames.repositories.GamesRepository
 import kotlinx.coroutines.Dispatchers
@@ -17,25 +18,24 @@ class FavItemListVM(
     private val gamesRepository: GamesRepository
 ) : ViewModel() {
 
-    private val _uiState: MutableStateFlow<FavItemListUiState> = MutableStateFlow(FavItemListUiState())
+    private val _uiState: MutableStateFlow<FavItemListUiState> =
+        MutableStateFlow(FavItemListUiState())
     val uiState: StateFlow<FavItemListUiState> = _uiState.asStateFlow()
 
     //TODO arreglar esto
     init {
         viewModelScope.launch(Dispatchers.IO) {
             val myGameResp = gamesRepository.getFavGames()
-            if (myGameResp.isSuccessful) {
-                val myGames = myGameResp.body()
+            if (myGameResp != null) {
                 _uiState.update { currentSate ->
                     currentSate.copy(
                         isLoading = false,
-                        gameList = (myGames?.let { it.toList() } ?: emptyList<Item>()) as List<Item>
+                        gameList = myGameResp
                     )
                 }
             } else {
-                //error en la respuesta...
-                _uiState.update { currentSate ->
-                    currentSate.copy(
+                _uiState.update { currentState ->
+                    currentState.copy(
                         isLoading = false,
                         error = true
                     )
@@ -44,20 +44,49 @@ class FavItemListVM(
         }
     }
 
-
-
-    fun delItemFromFav(pos: Int) {
-//        _uiState.update { currentSate ->
-//            val games = currentSate.itemList.toMutableList()
-//            games.removeAt(pos)
-//            currentSate.copy(
-//                gameList = games
-//            )
-//        }
+    fun gameDeletedFromFav(pos: Int) {
+        _uiState.update { currentSate ->
+            val games = currentSate.gameList.toMutableList()
+            games.removeAt(pos)
+            currentSate.copy(
+                gameList = games
+            )
+        }
     }
 
-    companion object {
+    fun deleteGameFromFav(pos : Int){
+        viewModelScope.launch(Dispatchers.IO){
+            val gameToRemove = _uiState.value.gameList.get(pos)
+            gamesRepository.deleteFavGame(gameToRemove)
+            if (!gamesRepository.getFavGames()!!.contains(gameToRemove)){
+                _uiState.update { currentState ->
+                    currentState.copy(
+                        isLoading = false,
+                        delFromFav = true
+                    )
+                }
+            }
+            else{
+                _uiState.update { currentState ->
+                    currentState.copy(
+                        isLoading = false,
+                        delFromFav = false,
+                        error = true
+                    )
+                }
+            }
+        }
+    }
 
+    //baja la bandera de borrado de favoritos
+    fun gameDeleted() {
+        _uiState.update { currenState ->
+            currenState.copy(
+                delFromFav = false
+            )
+        }
+    }
+    companion object {
 
 
         val Factory: ViewModelProvider.Factory = object : ViewModelProvider.Factory {

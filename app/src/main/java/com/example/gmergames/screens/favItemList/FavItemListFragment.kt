@@ -18,6 +18,7 @@ import com.example.gmergames.adapters.GameAdapter
 import com.example.gmergames.databinding.FragmentFavItemListBinding
 import com.example.gmergames.screens.itemList.ItemListFragmentDirections
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.launch
 
 class FavItemListFragment : Fragment() {
@@ -73,7 +74,8 @@ class FavItemListFragment : Fragment() {
             findNavController().navigate(action)
         }
         binding.btnDelFromFavs.setOnClickListener {
-            //Lo hace ya el gameAdapter con onClickDelete?
+        val gameToDelete =
+        //Lo hace ya el gameAdapter con onClickDelete?
             //Si quiero que lo haga también el botón btnDelFromFavs?
         }
     }
@@ -92,10 +94,24 @@ class FavItemListFragment : Fragment() {
                 }
             }
         }
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED){
+                favItemListVM.uiState.collect{gameState ->
+                    if(gameState.delFromFav){
+                        Snackbar.make(requireView(), R.string.game_deleted_from_fav, Snackbar.LENGTH_SHORT).show()
+                        favItemListVM.gameDeleted()
+                    }
+                    else{
+                        Snackbar.make(requireView(), R.string.game_not_deleted_from_favs, Snackbar.LENGTH_SHORT).show()
+                    }
+                }
+            }
+        }
     }
 
+    //borra un juego de la lista y notifica al adapter.
     private fun delItemFromFav(pos : Int){
-        favItemListVM.delItemFromFav(pos)
+        favItemListVM.deleteGameFromFav(pos)
         gameAdapter.notifyItemInserted(pos)
     }
     //Dialogo de confirmación del borrado.
@@ -109,14 +125,8 @@ class FavItemListFragment : Fragment() {
             }
             .setPositiveButton(resources.getString(R.string.accept)) { dialog, which ->
                 // Respond to positive button press
-                deleteItemFromFav(pos)
+                delItemFromFav(pos)
             }
             .show()
-    }
-
-    //borra un juego de la lista y notifica al adapter.
-    private fun deleteItemFromFav(pos : Int) {
-        favItemListVM.delItemFromFav(pos)
-        gameAdapter.notifyItemRemoved(pos)
     }
 }

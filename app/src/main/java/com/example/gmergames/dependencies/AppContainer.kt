@@ -7,6 +7,7 @@ import com.example.gmergames.api.ApiService
 import com.example.gmergames.dataStore.UserPreferences
 import com.example.gmergames.datamodel.LocalDatabase
 import com.example.gmergames.repositories.GamesRepository
+import com.example.gmergames.repositories.UserPreferencesRepository
 import com.example.myapplication.api.GameApiConfig
 import kotlinx.coroutines.Dispatchers
 
@@ -25,4 +26,10 @@ class AppContainer(context : Context) {
         GamesRepository(gameApiService, Dispatchers.IO,LocalDatabase.getDatabase(context).gameDao())
     }
     val gamesRepository get() = _gamesRepository
+
+    //Repositorio de configuración de usuario.
+    private val _userPreferencesRepository : UserPreferencesRepository by lazy {
+        UserPreferencesRepository(context.userDataStore)
+    }
+    val userPreferencesRepository get() = _userPreferencesRepository
 }

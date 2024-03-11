@@ -68,7 +68,7 @@ class DetailItemFragment : Fragment() {
                             binding.tvName.text = itemState.game?.name ?: ""
                             Glide.with(requireContext()).load(it.photo).into(binding.ivPhoto)
                             binding.tvName.text = it.name
-                            binding.tvCompany.text = it.genre
+                            binding.tvCompany.text = it.genre.toString()
                             binding.tvDescription.text = it.summary
                         }
                     } else {

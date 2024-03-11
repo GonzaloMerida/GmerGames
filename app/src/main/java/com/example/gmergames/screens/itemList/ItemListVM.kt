@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.CreationExtras
+import com.example.gmergames.data.Item
 import com.example.gmergames.dependencies.MyApplication
 import com.example.gmergames.repositories.GamesRepository
 import kotlinx.coroutines.Dispatchers
@@ -58,15 +59,38 @@ class ItemListVM(
         viewModelScope.launch(Dispatchers.IO){
             val gameAdded = _uiState.value.gameList.get(pos)
             gamesRepository.addItemToFav(gameAdded)
+            if (gamesRepository.getFavGames()!!.contains(gameAdded)){
+                _uiState.update { currentState ->
+                    currentState.copy(
+                        isLoading = false,
+                        addedToFav = true
+                    )
+                }
+            }
+            else{
+                _uiState.update { currentState ->
+                    currentState.copy(
+                        isLoading = false,
+                        addedToFav = false,
+                        error = true
+                    )
+                }
+            }
         }
-//        _uiState.update { currentState ->
-//
-//        }
+    }
+
+    //baja la bandera de añadido a favoritos
+    fun gameAdded() {
+        _uiState.update { currenState ->
+            currenState.copy(
+                addedToFav = false
+            )
+        }
     }
 
     companion object {
 
-        const val NUM_GAMES = 10
+        const val NUM_GAMES = 20
 
         val Factory: ViewModelProvider.Factory = object : ViewModelProvider.Factory {
             @Suppress("UNCHECKED_CAST")

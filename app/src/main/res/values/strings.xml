@@ -47,4 +47,12 @@
     <string name="accept">Confirm</string>
     <string name="item_list">List of videogames</string>
     <string name="support_confirm_delete_from_fav">Are you sure to del %s from favs?</string>
+    <string name="game_added_to_favs">Game successfully added to favs!</string>
+    <string name="game_deleted_from_fav">Game successfully removed from favs!</string>
+    <string name="game_not_aded_to_favs">An error occurred!</string>
+    <string name="game_not_deleted_from_favs">An error occurred!</string>
+    <string name="place_holder_name">Introduce name</string>
+    <string name="default_showCheckBox">Show viewPager at launch</string>
+    <string name="save_user_prefs">Save Prefs</string>
+    <string name="word_is_empty">Please, introduce a name</string>
 </resources>

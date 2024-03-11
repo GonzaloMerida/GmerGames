@@ -16,6 +16,7 @@ import com.example.gmergames.R
 import com.example.gmergames.adapters.GameAdapter
 import com.example.gmergames.databinding.FragmentItemListBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.launch
 
 class ItemListFragment : Fragment(){
@@ -97,11 +98,26 @@ class ItemListFragment : Fragment(){
                 }
             }
         }
+        lifecycleScope.launch {
+            repeatOnLifecycle(Lifecycle.State.STARTED){
+                gameListVM.uiState.collect{gameState ->
+                    if(gameState.addedToFav){
+                        Snackbar.make(requireView(), R.string.game_added_to_favs, Snackbar.LENGTH_SHORT).show()
+                        gameListVM.gameAdded()
+                    }
+                    else{
+                        Snackbar.make(requireView(),R.string.game_not_aded_to_favs, Snackbar.LENGTH_SHORT).show()
+                    }
+                }
+            }
+        }
     }
 
     private fun addItemToFav(pos : Int){
+
         gameListVM.addItemToFav(pos)
         gameAdapter.notifyItemInserted(pos)
+
     }
 
     //Dialogo de confirmación del borrado.

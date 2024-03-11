@@ -12,77 +12,81 @@ import kotlin.random.Random
 
 class GamesRepository(
     private val gameApiService: ApiService,
-    private val ioDispatcher : CoroutineDispatcher = Dispatchers.IO,
-    private val gameDAO : GameDao
+    private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO,
+    private val gameDAO: GameDao
 ) {
-    suspend fun getGames() : Response<ArrayList<Game>>{
+    suspend fun getGames(): Response<ArrayList<Game>> {
         return gameApiService.getGames(queryGetGames())
     }
 
-    suspend fun getGame() : Response<Game>{
+    suspend fun getGame(): Response<Game> {
         return gameApiService.getGame(queryGetRandomGame())
     }
 
-    suspend fun getGamesByName(name : String) : Response<ArrayList<Game>>{
+    suspend fun getGamesByName(name: String): Response<ArrayList<Game>> {
         return gameApiService.getGamesByName(name, queryGetGamesByName())
     }
 
-    suspend fun getGameById(id : Int) : Response<Game>{
+    suspend fun getGameById(id: Int): Response<Game> {
         return gameApiService.getGameById(id, queryGetGameById(id))
     }
 
-    suspend fun addItemToFav(item : Item) = withContext(ioDispatcher){
+    suspend fun addItemToFav(item: Item) = withContext(ioDispatcher) {
         gameDAO.insertGame(item)
     }
 
-//    suspend fun getFavGames() = withContext(ioDispatcher){
-//
-//    }
+    suspend fun getFavGames() = withContext(ioDispatcher) {
+        gameDAO.getAllGames()
+    }
 
-    suspend fun getItem(id : Int) : Response<Item> {
-        var myItem : Item? = null
+    suspend fun deleteFavGame(item : Item) = withContext(ioDispatcher){
+        gameDAO.deleteGame(item)
+    }
+
+    suspend fun getItem(id: Int): Response<Item> {
+        var myItem: Item? = null
         var gameResp = gameApiService.getGame(queryGetGameById(id))
-        if(gameResp.isSuccessful) {
+        if (gameResp.isSuccessful) {
             val game = gameResp.body()
             game?.let {
                 myItem = it.toItem()
             }
             return Response.success(myItem)
         } else
-            return Response.error(null,null)
+            return Response.error(null, null)
     }
 
-    suspend fun getRandomGames(num : Int) : Response<List<Game>>{
-        var gameList : MutableList<Game> = mutableListOf()
-        for (i in 1 .. num){
+    suspend fun getRandomGames(num: Int): Response<List<Game>> {
+        var gameList: MutableList<Game> = mutableListOf()
+        for (i in 1..num) {
             val gameResp = getGame()
-            if(gameResp.isSuccessful){
+            if (gameResp.isSuccessful) {
                 gameResp.body()?.let { gameList.add(gameList.size, gameResp.body()!!) }
-            }
-            else{
+            } else {
                 return Response.error(null, null)
             }
         }
         return Response.success(gameList)
     }
 
-    companion object{
+    companion object {
 
         const val RANDOM_GAME = 1
         const val MAX_GAMES = 20
         const val MAX_GAMES_BY_NAME = 5
-        fun queryGetGames() : String{
+        fun queryGetGames(): String {
             return "id, name, summary, genres.name, screenshots.url, platforms.name; limit $MAX_GAMES;"
         }
-        fun queryGetGamesByName() : String{
+
+        fun queryGetGamesByName(): String {
             return "id, name, summary, genres.name, screenshots.url, platforms.name; limit $MAX_GAMES_BY_NAME;"
         }
 
-        fun queryGetRandomGame() : String {
+        fun queryGetRandomGame(): String {
             return "id, name, summary, genres.name, screenshots.url, platforms.name; limit $RANDOM_GAME;"
         }
 
-        fun queryGetGameById(idAsked : Int) : String{
+        fun queryGetGameById(idAsked: Int): String {
             return "id, name, summary, genres.name, screenshots.url, platforms.name; where id = $idAsked"
         }
 

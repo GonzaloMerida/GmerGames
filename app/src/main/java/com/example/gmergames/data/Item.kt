@@ -4,18 +4,18 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity("game")
+@Entity("item")
 data class Item (
     @PrimaryKey(autoGenerate = true)
-    private val id : Int,
+    val id : Int = 0,
     @ColumnInfo(name = "name")
-    private val name : String,
+    val name : String = "",
     @ColumnInfo(name = "summary")
-    private val summary : String,
+    val summary : String = "",
     @ColumnInfo(name = "genre")
-    private val genre : List<String> = listOf(),
+    val genre : List<String> = listOf(),
     @ColumnInfo(name = "photo")
-    private val photo : String,
+    val photo : String = "",
     @ColumnInfo(name = "platforms")
-    private val platform : List<String> = listOf()
+    val platform : List<String> = listOf()
     )

@@ -26,7 +26,7 @@ class GameAdapter(
             onClickFav : (Int) -> Unit
         ){
             binding.tvName.text = item.name
-            binding.tvCompany.text = item.genre
+            binding.tvCompany.text = item.genre.toString()
             binding.tvDescription.text = item.summary
 
             val context = binding.ivPhoto.context

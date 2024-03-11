@@ -7,6 +7,7 @@ data class UserPreferences (
     companion object {
         const val SETTINGS_FILE = "settings"
         const val USER_NAME = "username"
+        const val DEFATULT_NAME = "default"
         const val SHOW_CHECKBOX = true
     }
 

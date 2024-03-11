@@ -1,4 +1,7 @@
 package com.example.gmergames.screens.userInfo
 
-class UserInfoUiState {
-}
+data class UserInfoUiState (
+    val name : String? = null,
+    val showCheckBox : Boolean = true,
+    val savedPreferences : Boolean = false
+)
