@@ -19,10 +19,16 @@ class GamesRepository(
         return gameApiService.getGames(queryGetGames())
     }
 
-    suspend fun getGame()
+    suspend fun getGame() : Response<Game>{
+        return gameApiService.getGame(queryGetRandomGame())
+    }
 
     suspend fun getGamesByName(name : String) : Response<ArrayList<Game>>{
         return gameApiService.getGamesByName(name, queryGetGamesByName())
+    }
+
+    suspend fun getGameById(id : Int) : Response<Game>{
+        return gameApiService.getGameById(id, queryGetGameById(id))
     }
 
     suspend fun addItemToFav(item : Item) = withContext(ioDispatcher){
@@ -35,7 +41,7 @@ class GamesRepository(
 
     suspend fun getItem(id : Int) : Response<Item> {
         var myItem : Item? = null
-        var gameResp = gameApiService.getGames(queryGetGames())
+        var gameResp = gameApiService.getGame(queryGetGameById(id))
         if(gameResp.isSuccessful) {
             val game = gameResp.body()
             game?.let {
@@ -45,16 +51,11 @@ class GamesRepository(
         } else
             return Response.error(null,null)
     }
-    suspend fun getRandomGame(): Response<Game> {
-        val seed = System.currentTimeMillis()
-        var x = (1..1000).random(Random(seed))
-        return getGames(queryGetGames())
-    }
 
     suspend fun getRandomGames(num : Int) : Response<List<Game>>{
         var gameList : MutableList<Game> = mutableListOf()
         for (i in 1 .. num){
-            val gameResp = getRandomGame()
+            val gameResp = getGame()
             if(gameResp.isSuccessful){
                 gameResp.body()?.let { gameList.add(gameList.size, gameResp.body()!!) }
             }
@@ -67,6 +68,7 @@ class GamesRepository(
 
     companion object{
 
+        const val RANDOM_GAME = 1
         const val MAX_GAMES = 20
         const val MAX_GAMES_BY_NAME = 5
         fun queryGetGames() : String{
@@ -74,6 +76,14 @@ class GamesRepository(
         }
         fun queryGetGamesByName() : String{
             return "id, name, summary, genres.name, screenshots.url, platforms.name; limit $MAX_GAMES_BY_NAME;"
+        }
+
+        fun queryGetRandomGame() : String {
+            return "id, name, summary, genres.name, screenshots.url, platforms.name; limit $RANDOM_GAME;"
+        }
+
+        fun queryGetGameById(idAsked : Int) : String{
+            return "id, name, summary, genres.name, screenshots.url, platforms.name; where id = $idAsked"
         }
 
     }

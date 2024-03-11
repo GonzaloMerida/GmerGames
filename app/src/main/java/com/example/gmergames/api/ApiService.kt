@@ -20,7 +20,10 @@ interface ApiService {
     suspend fun getGameById(
         @Query("search") id : Int,
         @Query("fields") fields : String) : Response<Game>
-    )
+
+    @POST("games")
+    suspend fun getGame(
+        @Query("fields") fields : String) : Response<Game>
 //    @POST("genres")
 //    suspend fun getGenresByGameName(
 //        @Query("search") gameName : String,
