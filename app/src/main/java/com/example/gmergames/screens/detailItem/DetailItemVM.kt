@@ -32,13 +32,13 @@ class DetailItemVM(
     fun setGame() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                val gameResp = gamesRepository.getGame(id)
+                val gameResp = gamesRepository.getItem(id)
                 if (gameResp.isSuccessful) {
                     val game = gameResp.body()
                     _uiState.update { currentState ->
                         currentState.copy(
                             isLoading = false,
-                            game = game?.toItem()
+                            game = game
                         )
 
                     }

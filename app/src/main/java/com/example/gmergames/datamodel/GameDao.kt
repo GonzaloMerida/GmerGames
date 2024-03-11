@@ -2,8 +2,7 @@ package com.example.gmergames.datamodel
 
 import androidx.room.*
 import androidx.room.OnConflictStrategy
-import com.example.gmergames.data.Game
-import com.example.gmergames.data.Item
+
 
 @Dao
 interface GameDao {
@@ -13,11 +12,12 @@ interface GameDao {
     @Delete
     suspend fun deleteGame(item : Item)
 
-    @Query("SELECT * FROM game ORDER BY RANDOM()")
+    @Query("SELECT * FROM game ORDER BY id")
     suspend fun getAllGames() : List<Item>?
 
     @Query("SELECT * FROM game ORDER BY RANDOM() DESC LIMIT 1")
     suspend fun getRandomGame() : Item?
+
 
     @Query("DELETE FROM game")
     suspend fun clearGames()

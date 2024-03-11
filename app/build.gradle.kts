@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.example.gmergames"
-    compileSdk = 32
+    compileSdk = 34
 
     viewBinding{
         enable = true

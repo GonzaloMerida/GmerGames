@@ -4,7 +4,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.CreationExtras
-import com.example.gmergames.data.Item
 import com.example.gmergames.dependencies.MyApplication
 import com.example.gmergames.repositories.GamesRepository
 import kotlinx.coroutines.Dispatchers

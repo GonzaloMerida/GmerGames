@@ -1,10 +1,21 @@
 package com.example.gmergames.data
 
-//TIene que ir en datasource con las anotaciones de @Entity, @PrimaryKey, @ColumnInfo
-data class Item(
-    val id : Int,
-    val name : String,
-    val summary : String,
-    val genre : String,
-    val photo : String
-)
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity("game")
+data class Item (
+    @PrimaryKey(autoGenerate = true)
+    private val id : Int,
+    @ColumnInfo(name = "name")
+    private val name : String,
+    @ColumnInfo(name = "summary")
+    private val summary : String,
+    @ColumnInfo(name = "genre")
+    private val genre : List<String> = listOf(),
+    @ColumnInfo(name = "photo")
+    private val photo : String,
+    @ColumnInfo(name = "platforms")
+    private val platform : List<String> = listOf()
+    )

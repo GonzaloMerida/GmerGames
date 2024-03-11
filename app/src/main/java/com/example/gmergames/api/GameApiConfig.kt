@@ -20,11 +20,13 @@ class GameApiConfig {
 
         const val CLIENT_ID = "bp7x7j13buptcuvzj07iyq4n2qygn0"
 
-        const val CLIENT_SECRET = "0ctzpnorswusc9syl4mdlghpkor1mc"
+        const val CLIENT_SECRET = "zm16un1akftpq2c21erab9032tbv91"
 
         val token = TwitchAuthenticator.requestTwitchToken(CLIENT_ID, CLIENT_SECRET)
 
-        //Bearer y6popj89pbpdkaz6goql4hhm6ojkhm
+        //https://id.twitch.tv/oauth2/token?client_id=bp7x7j13buptcuvzj07iyq4n2qygn0&client_secret=zm16un1akftpq2c21erab9032tbv91&grant_type=client_credentials
+
+        //Bearer 2nbym8tmkyx8wjxx7qxpulkfya0pfa
 
         //Definición de la api de Retrofit2.
         fun provideRetrofit(): Retrofit {

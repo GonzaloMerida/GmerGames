@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.gmergames.R
-import com.example.gmergames.data.Game
 import com.example.gmergames.data.Item
 import com.example.gmergames.databinding.FragmentDetailItemBinding
 

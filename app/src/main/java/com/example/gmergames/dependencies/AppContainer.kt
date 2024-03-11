@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.preferencesDataStore
 import com.example.gmergames.api.ApiService
-import com.example.gmergames.datamodel.GameDao
+import com.example.gmergames.dataStore.UserPreferences
 import com.example.gmergames.datamodel.LocalDatabase
 import com.example.gmergames.repositories.GamesRepository
 import com.example.myapplication.api.GameApiConfig
@@ -12,7 +12,7 @@ import kotlinx.coroutines.Dispatchers
 
 
 //Datastore. Configuración básica de la app.
-//val Context.userDataStore by preferencesDataStore(name = UserPreferences.SETTINGS_FILE)
+val Context.userDataStore by preferencesDataStore(name = UserPreferences.SETTINGS_FILE)
 
 
 class AppContainer(context : Context) {
