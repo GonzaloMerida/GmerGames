@@ -37,8 +37,6 @@ class FavItemListFragment : Fragment() {
 
         binding.tvItemListHead.text = getString(R.string.fav_games_head)
 
-
-
         return binding.root
     }
 
@@ -74,7 +72,7 @@ class FavItemListFragment : Fragment() {
             findNavController().navigate(action)
         }
         binding.btnDelFromFavs.setOnClickListener {
-        val gameToDelete =
+        val gameToDelete = gameAdapter.getSelectedPosition()
         //Lo hace ya el gameAdapter con onClickDelete?
             //Si quiero que lo haga también el botón btnDelFromFavs?
         }
