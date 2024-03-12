@@ -64,7 +64,7 @@ class UserInfoFragment : Fragment() {
     private fun setListeners(){
         binding.btnSaveUserPrefs.setOnClickListener {
             validateName(binding.etName.text.toString())
-            val action = UserInfoFragmentDirections.actionUserInfoFragmentToMenuFragment()
+            val action = UserInfoFragmentDirections.actionUserInfoFragmentToMenuFragment(userInfoVM.uiState.value.name)
             findNavController().navigate(action)
         }
     }

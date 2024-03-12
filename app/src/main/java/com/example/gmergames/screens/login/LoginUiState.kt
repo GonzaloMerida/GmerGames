@@ -1,4 +1,6 @@
 package com.example.gmergames.screens.login
 
-class LoginUiState {
-}
+data class LoginUiState(
+    val name : String? = null,
+    val checkBox : Boolean = true
+)

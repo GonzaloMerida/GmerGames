@@ -71,11 +71,11 @@ class FavItemListFragment : Fragment() {
             val action = FavItemListFragmentDirections.actionFavItemListFragmentToItemListFragment()
             findNavController().navigate(action)
         }
-        binding.btnDelFromFavs.setOnClickListener {
-        val gameToDelete = gameAdapter.getSelectedPosition()
-        //Lo hace ya el gameAdapter con onClickDelete?
-            //Si quiero que lo haga también el botón btnDelFromFavs?
-        }
+//        binding.btnDelFromFavs.setOnClickListener {
+//        val gameToDelete = gameAdapter.getSelectedPosition()
+//        //Lo hace ya el gameAdapter con onClickDelete?
+//            //Si quiero que lo haga también el botón btnDelFromFavs?
+//        }
     }
 
     private fun setCollectors() {

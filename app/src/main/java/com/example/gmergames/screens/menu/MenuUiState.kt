@@ -1,4 +1,6 @@
 package com.example.gmergames.screens.menu
 
-class MenuUiState {
-}
+data class MenuUiState (
+    val name : String? = null,
+    val checkBox : Boolean = true
+)

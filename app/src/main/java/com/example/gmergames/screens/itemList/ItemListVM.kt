@@ -7,19 +7,26 @@ import androidx.lifecycle.viewmodel.CreationExtras
 import com.example.gmergames.data.Item
 import com.example.gmergames.dependencies.MyApplication
 import com.example.gmergames.repositories.GamesRepository
+import com.example.gmergames.repositories.UserPreferencesRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class ItemListVM(
-    private val gamesRepository: GamesRepository
+    private val gamesRepository: GamesRepository,
+    private val userPreferencesRepository: UserPreferencesRepository
 ) : ViewModel(){
 
     private val _uiState: MutableStateFlow<ItemListUiState> = MutableStateFlow(ItemListUiState())
     val uiState : StateFlow<ItemListUiState> = _uiState.asStateFlow()
+
+    private var _name : String? = ""
+    val name: String?
+        get() = _name
 
     init{
         viewModelScope.launch(Dispatchers.IO) {
@@ -42,6 +49,11 @@ class ItemListVM(
                 }
             }
         }
+    }
+
+    fun getName() : String?{
+        _name = userPreferencesRepository.getName().toString()
+        return _name
     }
 
     fun deleteGame(pos: Int) {
@@ -88,6 +100,7 @@ class ItemListVM(
         }
     }
 
+
     companion object {
 
         const val NUM_GAMES = 20
@@ -103,7 +116,8 @@ class ItemListVM(
                     checkNotNull(extras[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY])
 
                 return ItemListVM(
-                    (application as MyApplication).appContainer.gamesRepository
+                    (application as MyApplication).appContainer.gamesRepository,
+                    application.appContainer.userPreferencesRepository
                 ) as T
             }
         }

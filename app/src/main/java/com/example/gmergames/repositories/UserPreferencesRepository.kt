@@ -34,4 +34,11 @@ class UserPreferencesRepository (
             userPreferences[booleanPreferencesKey(UserPreferences.SHOW_CHECKBOX.toString())] = showCheckBox
         }
     }
+
+    //Obtener el nombre almacenado en el DataStore
+    fun getName(): Flow<String?> {
+        return userDataStore.data.map { userPreferences ->
+            userPreferences[stringPreferencesKey(UserPreferences.USER_NAME)]
+        }
+    }
 }
