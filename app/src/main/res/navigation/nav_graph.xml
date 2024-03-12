@@ -48,6 +48,9 @@
             app:destination="@id/userInfoFragment"
             app:popUpTo="@id/menuFragment"
             app:popUpToInclusive="false" />
+        <argument
+            android:name="name"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/noticeFragment"
