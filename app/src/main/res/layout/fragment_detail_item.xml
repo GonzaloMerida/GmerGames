@@ -52,44 +52,44 @@
                 tools:text="Videojuego X" />
 
             <TextView
-                android:id="@+id/textCompany"
+                android:id="@+id/textGenre"
                 style="@style/important_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/company"
-                app:layout_constraintEnd_toStartOf="@+id/textDescription"
+                android:text="@string/genre"
+                app:layout_constraintEnd_toStartOf="@+id/textSummary"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintHorizontal_chainStyle="spread"
                 app:layout_constraintStart_toEndOf="@+id/ivPhoto"
                 app:layout_constraintTop_toBottomOf="@+id/tvName" />
 
             <TextView
-                android:id="@+id/textDescription"
+                android:id="@+id/textSummary"
                 style="@style/important_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
-                android:text="@string/description"
+                android:text="@string/Summary"
                 app:layout_constraintEnd_toStartOf="@+id/ivDelItem"
-                app:layout_constraintStart_toEndOf="@+id/textCompany"
-                app:layout_constraintTop_toTopOf="@+id/textCompany" />
+                app:layout_constraintStart_toEndOf="@+id/textGenre"
+                app:layout_constraintTop_toTopOf="@+id/textGenre" />
 
             <TextView
-                android:id="@+id/tvCompany"
+                android:id="@+id/tvGenre"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintBaseline_toBaselineOf="@+id/tvDescription"
-                app:layout_constraintEnd_toEndOf="@+id/textCompany"
-                app:layout_constraintStart_toStartOf="@+id/textCompany"
-                tools:text="@string/companyName" />
+                app:layout_constraintBaseline_toBaselineOf="@+id/tvSummary"
+                app:layout_constraintEnd_toEndOf="@+id/textGenre"
+                app:layout_constraintStart_toStartOf="@+id/textGenre"
+                tools:text="@string/genreExample" />
 
             <TextView
-                android:id="@+id/tvDescription"
+                android:id="@+id/tvSummary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="@+id/textDescription"
-                app:layout_constraintStart_toStartOf="@+id/textDescription"
-                app:layout_constraintTop_toBottomOf="@+id/textDescription"
+                app:layout_constraintEnd_toEndOf="@+id/textSummary"
+                app:layout_constraintStart_toStartOf="@+id/textSummary"
+                app:layout_constraintTop_toBottomOf="@+id/textSummary"
                 tools:text="@string/descriptionText" />
 
 
@@ -111,6 +111,23 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/ivPhoto"
                 app:srcCompat="@android:drawable/btn_star_big_on" />
+
+            <RatingBar
+                android:id="@+id/rbRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin"
+                android:layout_marginTop="@dimen/margin"
+                android:layout_marginEnd="@dimen/margin"
+                android:layout_marginBottom="@dimen/margin"
+                android:isIndicator="true"
+                android:progressTint="#4CAF50"
+                android:rating="3"
+                android:stepSize="0.5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/ivDelItem"
+                app:layout_constraintStart_toEndOf="@id/ivPhoto"
+                app:layout_constraintTop_toBottomOf="@id/tvGenre" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 

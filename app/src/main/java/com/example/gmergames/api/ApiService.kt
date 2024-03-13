@@ -24,9 +24,8 @@ interface ApiService {
     @POST("games")
     suspend fun getGame(
         @Query("fields") fields : String) : Response<Game>
-//    @POST("genres")
-//    suspend fun getGenresByGameName(
-//        @Query("search") gameName : String,
-//        @Query("fields") fields : String) : Response<ArrayList<Genre>>
-//    )
+    @POST("genres")
+    suspend fun getGenresByGameName(
+        @Query("search") gameName : String,
+        @Query("fields") fields : String) : Response<ArrayList<Genre>>
 }

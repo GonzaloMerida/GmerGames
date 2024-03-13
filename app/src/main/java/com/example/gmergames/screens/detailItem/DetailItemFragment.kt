@@ -67,9 +67,9 @@ class DetailItemFragment : Fragment() {
                         itemState.game?.let {
                             binding.tvName.text = itemState.game?.name ?: ""
                             Glide.with(requireContext()).load(it.photo).into(binding.ivPhoto)
-                            binding.tvName.text = it.name
-                            binding.tvCompany.text = it.genre.toString()
-                            binding.tvDescription.text = it.summary
+                            binding.tvGenre.text = it.genre.toString()
+                            binding.tvSummary.text = it.summary
+                            binding.rbRating.rating = it.rating.toFloat()/20
                         }
                     } else {
                         binding.pbLoadingDetailItem.isVisible = true

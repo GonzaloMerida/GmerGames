@@ -17,5 +17,7 @@ data class Item (
     @ColumnInfo(name = "photo")
     val photo : String = "",
     @ColumnInfo(name = "platforms")
-    val platform : List<String> = listOf()
+    val platform : List<String> = listOf(),
+    @ColumnInfo(name = "rating")
+    val rating : Int = 0
     )
