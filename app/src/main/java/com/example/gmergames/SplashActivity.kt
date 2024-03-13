@@ -18,11 +18,11 @@ class SplashActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
-        // Espera 3 segundos antes de navegar al LoginFragment
+        // Espera 3 segundos antes de iniciar la MainActivity
         Handler(Looper.getMainLooper()).postDelayed({
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.llcSplash, LoginFragment.newInstance())
-                .commit()
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
         }, SPLASH_DISPLAY_LENGTH)
     }
 }

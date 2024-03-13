@@ -5,9 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.InputMethodManager
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
@@ -25,12 +22,6 @@ class LoginFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val loginVM: LoginVM by viewModels<LoginVM> { LoginVM.Factory }
-
-    companion object {
-        fun newInstance(): LoginFragment {
-            return LoginFragment()
-        }
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
