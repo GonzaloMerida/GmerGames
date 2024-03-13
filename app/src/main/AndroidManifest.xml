@@ -29,10 +29,7 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-
         <!-- Activity de Splash -->
         <activity android:name=".SplashActivity" />
-        <activity android:name=".screens.login.LoginFragment"/>
-
     </application>
 </manifest>
