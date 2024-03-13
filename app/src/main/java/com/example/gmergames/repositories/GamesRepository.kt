@@ -75,19 +75,23 @@ class GamesRepository(
         const val MAX_GAMES = 20
         const val MAX_GAMES_BY_NAME = 5
         fun queryGetGames(): String {
-            return "id, name, summary, genres.name, screenshots.url, platforms.name; limit $MAX_GAMES;"
+            return "id, name, summary, genres.name, screenshots.url; limit $MAX_GAMES;"
         }
 
         fun queryGetGamesByName(): String {
-            return "id, name, summary, genres.name, screenshots.url, platforms.name; limit $MAX_GAMES_BY_NAME;"
+            return "id, name, summary, genres.name, screenshots.url; limit $MAX_GAMES_BY_NAME;"
         }
 
         fun queryGetRandomGame(): String {
-            return "id, name, summary, genres.name, screenshots.url, platforms.name; limit $RANDOM_GAME;"
+            return "id, name, summary, genres.name, screenshots.url; limit $RANDOM_GAME;"
         }
 
         fun queryGetGameById(idAsked: Int): String {
-            return "id, name, summary, genres.name, screenshots.url, platforms.name; where id = $idAsked"
+            return "id, name, summary, genres.name, screenshots.url; where id = $idAsked"
+        }
+
+        fun queryGetGenres() : String{
+            return "name;"
         }
 
     }

@@ -9,23 +9,35 @@ import retrofit2.http.Query
 interface ApiService {
     @POST("games")
     suspend fun getGames(
-        @Query("fields") fields : String) : Response<ArrayList<Game>>
+        @Query("fields") fields: String
+    ): Response<ArrayList<Game>>
 
     @POST("games")
     suspend fun getGamesByName(
-        @Query("search") gameName : String,
-        @Query("fields") fields : String) : Response<ArrayList<Game>>
+        @Query("search") gameName: String,
+        @Query("fields") fields: String
+    ): Response<ArrayList<Game>>
 
     @POST("games")
     suspend fun getGameById(
-        @Query("search") id : Int,
-        @Query("fields") fields : String) : Response<Game>
+        @Query("search") id: Int,
+        @Query("fields") fields: String
+    ): Response<Game>
 
     @POST("games")
     suspend fun getGame(
-        @Query("fields") fields : String) : Response<Game>
+        @Query("fields") fields: String
+    ): Response<Game>
+
     @POST("genres")
-    suspend fun getGenresByGameName(
-        @Query("search") gameName : String,
-        @Query("fields") fields : String) : Response<ArrayList<Genre>>
+    suspend fun getGenreByGameName(
+        @Query("search") gameName: String,
+        @Query("fields") fields: String
+    ): Response<String>
+
+    @POST("genres")
+    suspend fun getGenres(
+        @Query("fields") fields: String
+    ): Response<String>
+
 }

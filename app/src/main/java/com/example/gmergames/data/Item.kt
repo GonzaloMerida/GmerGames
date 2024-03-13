@@ -13,11 +13,9 @@ data class Item (
     @ColumnInfo(name = "summary")
     val summary : String = "",
     @ColumnInfo(name = "genre")
-    val genre : List<String> = listOf(),
+    val genre : String = "",
     @ColumnInfo(name = "photo")
     val photo : String = "",
-    @ColumnInfo(name = "platforms")
-    val platform : List<String> = listOf(),
     @ColumnInfo(name = "rating")
     val rating : Int = 0
     )
