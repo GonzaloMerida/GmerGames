@@ -9,10 +9,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 import okhttp3.Request
 import java.util.concurrent.TimeUnit
 
-//?xml version = ... y debajo el scrollview
-//ScrollView, meter los 3 atributos xmlns justo tras ScrollView, cerrar con >, y se cierra </ScrollView> abajo del to
-//es decir el scrollview engloba el constrainglayout
-
 class GameApiConfig {
     companion object {
 
