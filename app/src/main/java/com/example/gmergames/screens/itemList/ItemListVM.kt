@@ -25,8 +25,6 @@ class ItemListVM(
     val uiState : StateFlow<ItemListUiState> = _uiState.asStateFlow()
 
     private var _name : String? = ""
-    val name: String?
-        get() = _name
 
     init{
         viewModelScope.launch(Dispatchers.IO) {
@@ -66,7 +64,6 @@ class ItemListVM(
         }
     }
 
-    //TODO cómo añado a favs?
     fun addItemToFav(pos : Int){
         viewModelScope.launch(Dispatchers.IO){
             val gameAdded = _uiState.value.gameList.get(pos)

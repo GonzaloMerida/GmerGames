@@ -4,11 +4,11 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.gmergames.data.Game
+import com.example.gmergames.data.Item
 
 
 @Database(
-    entities = [Game::class],
+    entities = [Item::class],
     version = 1,
     exportSchema = false)
 abstract class LocalDatabase : RoomDatabase() {

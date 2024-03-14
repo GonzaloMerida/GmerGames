@@ -12,6 +12,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.example.gmergames.R
+import com.example.gmergames.dataStore.UserPreferences
 import com.example.gmergames.databinding.FragmentLoginBinding
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.launch
@@ -47,7 +48,8 @@ class LoginFragment : Fragment() {
 
     private fun setListeners() {
         binding.btnEnter.setOnClickListener {
-            val action = LoginFragmentDirections.actionLoginFragmentToNoticeFragment()
+            var nameEntered = validateName(binding.etUser.text.toString())
+            val action = LoginFragmentDirections.actionLoginFragmentToMenuFragment(nameEntered.toString())
             findNavController().navigate(action)
         }
 
@@ -91,27 +93,14 @@ class LoginFragment : Fragment() {
         }
     }
 
-    ///**
-    //* El parámetro view es la vista donde se mostrará el snackBar
-    //* El parámetro message, es un string con el mensaje de error que se le mostrará en el
-    //* snackBar
-    //*/
-    //private fun showErrorSnackbar(view: View, message: String) {
-    //creación del objeto Snackbar indicando la vista en la que se mostrará
-    //el mensaje que mostrará y la duración del snackBar
-    //   val snackbar = Snackbar.make(view, message, Snackbar.LENGTH_LONG)
-    //muestra el snackbar
-    //    snackbar.show()
-
-    // Ocultar el teclado virtual
-    //obtenemos un objeto del teclado
-//    private fun hideKeyBoard() {
-//        val inputMethodManager = getSystemService(AppCompatActivity.INPUT_METHOD_SERVICE) as InputMethodManager
-//        //ocultar el teclado de la ventana en la que se encuentre y el 0 indica que no se debe
-//        //forzar cambios en el teclado
-//        inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
-//        // }
-//    }
-
-
+    private fun validateName(name: String) {
+        if(name.isBlank())
+            Snackbar.make(requireView(),getString(R.string.word_is_empty), Snackbar.LENGTH_SHORT).show()
+        else
+            loginVM.saveUserPrefs(name, loginVM.uiState.value.showCheckBox)
+    }
 }
+
+
+
+

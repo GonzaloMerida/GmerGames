@@ -7,15 +7,15 @@ import androidx.room.PrimaryKey
 @Entity("item")
 data class Item (
     @PrimaryKey(autoGenerate = true)
-    val id : Int = 0,
+    var id : Int = 0,
     @ColumnInfo(name = "name")
-    val name : String = "",
+    var name : String = "",
     @ColumnInfo(name = "summary")
-    val summary : String = "",
+    var summary : String = "",
     @ColumnInfo(name = "genre")
-    val genre : String = "",
+    var genre : String = "",
     @ColumnInfo(name = "photo")
-    val photo : String = "",
+    var photo : String = "",
     @ColumnInfo(name = "rating")
-    val rating : Int = 0
-    )
+    var rating : Int = 0
+)

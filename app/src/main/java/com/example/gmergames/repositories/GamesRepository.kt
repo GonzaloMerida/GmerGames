@@ -15,7 +15,7 @@ class GamesRepository(
     private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO,
     private val gameDAO: GameDao
 ) {
-    suspend fun getGames(): Response<ArrayList<Game>> {
+    suspend fun getGames(): Response<List<Game>> {
         return gameApiService.getGames(queryGetGames())
     }
 
@@ -23,7 +23,7 @@ class GamesRepository(
         return gameApiService.getGame(queryGetRandomGame())
     }
 
-    suspend fun getGamesByName(name: String): Response<ArrayList<Game>> {
+    suspend fun getGamesByName(name: String): Response<List<Game>> {
         return gameApiService.getGamesByName(name, queryGetGamesByName())
     }
 
@@ -39,7 +39,7 @@ class GamesRepository(
         gameDAO.getAllGames()
     }
 
-    suspend fun deleteFavGame(item : Item) = withContext(ioDispatcher){
+    suspend fun deleteFavGame(item: Item) = withContext(ioDispatcher) {
         gameDAO.deleteGame(item)
     }
 
@@ -56,12 +56,17 @@ class GamesRepository(
             return Response.error(null, null)
     }
 
-    suspend fun getRandomGames(num: Int): Response<List<Game>> {
-        var gameList: MutableList<Game> = mutableListOf()
+    suspend fun getRandomGames(num: Int): Response<List<Item>> {
+        var myItem: Item? = null
+        var gameList: MutableList<Item> = mutableListOf()
         for (i in 1..num) {
-            val gameResp = getGame()
+            var gameResp = getGame()
             if (gameResp.isSuccessful) {
-                gameResp.body()?.let { gameList.add(gameList.size, gameResp.body()!!) }
+                var game = gameResp.body()
+                game?.let {
+                    myItem = it.toItem()
+                    gameList.add(gameList.size, myItem!!)
+                }
             } else {
                 return Response.error(null, null)
             }
@@ -90,7 +95,7 @@ class GamesRepository(
             return "id, name, summary, genres.name, screenshots.url; where id = $idAsked"
         }
 
-        fun queryGetGenres() : String{
+        fun queryGetGenres(): String {
             return "name;"
         }
 

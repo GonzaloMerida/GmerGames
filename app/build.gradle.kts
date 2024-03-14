@@ -78,6 +78,7 @@ dependencies {
     implementation("androidx.datastore:datastore:1.0.0")
     implementation("androidx.datastore:datastore-preferences:1.0.0")
 
+    annotationProcessor ("android.arch.persistence.room:compiler:1.0.0")
     // To use Kotlin annotation processing tool (kapt)
     kapt ("androidx.room:room-compiler:2.5.0")
 

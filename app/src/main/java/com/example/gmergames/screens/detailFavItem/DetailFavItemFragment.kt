@@ -68,8 +68,8 @@ class DetailFavItemFragment : Fragment() {
                             binding.tvName.text = itemState.game?.name ?: ""
                             Glide.with(requireContext()).load(it.photo).into(binding.ivPhoto)
                             binding.tvName.text = it.name
-                            binding.tvCompany.text = it.genre
-                            binding.tvDescription.text = it.summary
+                            binding.tvGenre.text = it.genre
+                            binding.tvSummary.text = it.summary
                         }
                     } else {
                         binding.pbLoadingDetailFavItem.isVisible = true

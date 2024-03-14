@@ -10,13 +10,13 @@ interface ApiService {
     @POST("games")
     suspend fun getGames(
         @Query("fields") fields: String
-    ): Response<ArrayList<Game>>
+    ): Response<List<Game>>
 
     @POST("games")
     suspend fun getGamesByName(
         @Query("search") gameName: String,
         @Query("fields") fields: String
-    ): Response<ArrayList<Game>>
+    ): Response<List<Game>>
 
     @POST("games")
     suspend fun getGameById(

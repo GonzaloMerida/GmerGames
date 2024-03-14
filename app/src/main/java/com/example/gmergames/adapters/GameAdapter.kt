@@ -26,8 +26,8 @@ class GameAdapter(
             onClickFav : (Int) -> Unit
         ){
             binding.tvName.text = item.name
-            binding.tvCompany.text = item.genre.toString()
-            binding.tvDescription.text = item.summary
+            binding.tvGenre.text = item.genre.toString()
+            binding.tvSummary.text = item.summary
 
             val context = binding.ivPhoto.context
             Glide.with(context).load(item.photo).circleCrop().into(binding.ivPhoto)

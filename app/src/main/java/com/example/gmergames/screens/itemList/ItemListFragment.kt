@@ -74,7 +74,7 @@ class ItemListFragment : Fragment(){
 
     private fun setListeners() {
         binding.btnBack.setOnClickListener {
-            val name = gameListVM.getName()
+            val name = gameListVM.getName() ?: ""
             val action = ItemListFragmentDirections.actionItemListFragmentToMenuFragment(name)
             findNavController().navigate(action)
         }

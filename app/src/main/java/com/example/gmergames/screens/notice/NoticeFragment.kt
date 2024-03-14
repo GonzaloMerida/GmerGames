@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import com.example.gmergames.databinding.FragmentNoticeBinding
@@ -16,6 +17,8 @@ class NoticeFragment : Fragment() {
     private var _binding : FragmentNoticeBinding? = null
     private val binding
         get() = _binding!!
+
+    private val noticeVM: NoticeVM by viewModels<NoticeVM> { NoticeVM.Factory }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
