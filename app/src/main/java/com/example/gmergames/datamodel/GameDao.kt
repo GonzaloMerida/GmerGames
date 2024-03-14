@@ -6,6 +6,9 @@ import com.example.gmergames.data.Item
 import kotlinx.coroutines.flow.Flow
 
 
+//Los suspend están en comentarios porque si no, no consigo que inicie la aplicación, deberían ser
+//suspend para que vayan por corrutinas y no bloqueen la aplicación
+
 @Dao
 interface GameDao {
     @Insert(onConflict = OnConflictStrategy.ABORT)

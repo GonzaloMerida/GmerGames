@@ -43,15 +43,6 @@ class FavItemListVM(
         }
     }
 
-    fun gameDeletedFromFav(pos: Int) {
-        _uiState.update { currentSate ->
-            val games = currentSate.gameList.toMutableList()
-            games.removeAt(pos)
-            currentSate.copy(
-                gameList = games
-            )
-        }
-    }
 
     fun deleteGameFromFav(pos : Int){
         viewModelScope.launch(Dispatchers.IO){
