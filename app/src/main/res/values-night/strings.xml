@@ -3,7 +3,6 @@
     <string name="welcome" >Welcome to GMERGAMES, introduce your name, please</string>
     <string name="enter" >ENTER</string>
     <string name="infoVersion" >User %s, you are using version 1 of GMERGAMES</string>
-    <string name="contact" >Contact</string>
     <string name="activity_paused">The Main Activity has been paused</string>
     <string name="activity_restarted">The Main Activity has been restarted</string>
     <string name="activity_started">The Main Activity has been started</string>

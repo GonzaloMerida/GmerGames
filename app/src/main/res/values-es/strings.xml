@@ -20,8 +20,8 @@
     <string name="no_email_apps">No existe ninguna app instalada capaz de enviar e-mails</string>
     <string name="btnExit">Salir</string>
     <string name="notice">Info de la APP</string>
-    <string name="first_tab">Primera pestaña</string>
-    <string name="second_tab">Segunda pestaña</string>
+    <string name="first_tab">¡Bienvenidos a GmerGames! Tu biblioteca de bolsillo de tus videojuegos favoritos</string>
+    <string name="second_tab">¡Puedes agregar tus juegos favoritos a tu propia lista y calificarlos!</string>
     <string name="comenzar">Comenzar</string>
     <string name="item_list_head">Lista de videojuegos:</string>
     <string name="item_image">Imagen del item</string>

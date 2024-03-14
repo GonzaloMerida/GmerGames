@@ -49,8 +49,17 @@ class LoginFragment : Fragment() {
     private fun setListeners() {
         binding.btnEnter.setOnClickListener {
             var nameEntered = validateName(binding.etUser.text.toString())
-            val action = LoginFragmentDirections.actionLoginFragmentToMenuFragment(nameEntered.toString())
-            findNavController().navigate(action)
+            var showCheckBox = loginVM.uiState.value.showCheckBox
+            if(showCheckBox){
+                val action = LoginFragmentDirections.actionLoginFragmentToNoticeFragment()
+                findNavController().navigate(action)
+            }
+            else{
+                val action = LoginFragmentDirections.actionLoginFragmentToMenuFragment(nameEntered.toString())
+                findNavController().navigate(action)
+            }
+
+
         }
 
         binding.bottomAppBar.setOnMenuItemClickListener { menuItem ->

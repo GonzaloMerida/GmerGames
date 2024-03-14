@@ -29,13 +29,14 @@ class UserInfoVM(
         }
     }
 
-    private suspend fun updateState() {
+    suspend fun updateState() {
         userPreferencesRepository.getUserPrefs().collect{userPreferencesFlow ->
             _uiState.update { currentState ->
                 userPreferencesFlow.copy()
             }
         }
     }
+
 
     fun saveUserPrefs(name : String, showCheckBox : Boolean){
         Log.d("datastore", "nombre: $name, mostrarCheckBox: $showCheckBox")

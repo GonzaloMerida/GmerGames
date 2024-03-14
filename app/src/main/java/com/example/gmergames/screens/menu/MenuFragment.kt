@@ -68,8 +68,8 @@ class MenuFragment : Fragment() {
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 menuVM.uiState.collect { itemState ->
-                    itemState.copy().let {
-                        binding.tvInfo.text = itemState.name
+                    itemState.copy().let {newState ->
+                        binding.tvInfo.text = newState.name
                     }
                 }
             }

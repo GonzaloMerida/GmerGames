@@ -19,13 +19,14 @@ import kotlinx.coroutines.launch
 class UserInfoFragment : Fragment() {
     private lateinit var binding: FragmentUserInfoBinding
 
-    private val userInfoVM : UserInfoVM by viewModels<UserInfoVM> { UserInfoVM.Factory }
+    private val userInfoVM: UserInfoVM by viewModels<UserInfoVM> { UserInfoVM.Factory }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
         }
     }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -50,36 +51,28 @@ class UserInfoFragment : Fragment() {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 userInfoVM.uiState.collect { userPreferences ->
                     binding.etName.setText(userPreferences.name)
-                    if(userPreferences.showCheckBox){
-                        binding.cbShowCheckBox.isChecked
-                    }
-                    else{
-                        !binding.cbShowCheckBox.isChecked
-                    }
+                    binding.cbShowCheckBox.isChecked = userPreferences.showCheckBox
                 }
             }
         }
     }
 
-    private fun setListeners(){
+    private fun setListeners() {
         binding.btnSaveUserPrefs.setOnClickListener {
             validateName(binding.etName.text.toString())
-            val action = UserInfoFragmentDirections.actionUserInfoFragmentToMenuFragment(userInfoVM.uiState.value.name)
+            val action =
+                UserInfoFragmentDirections.actionUserInfoFragmentToMenuFragment(userInfoVM.uiState.value.name)
             findNavController().navigate(action)
         }
     }
 
     private fun validateName(name: String) {
-        if(name.isBlank())
-            Snackbar.make(requireView(),getString(R.string.word_is_empty), Snackbar.LENGTH_SHORT).show()
+        if (name.isBlank())
+            Snackbar.make(requireView(), getString(R.string.word_is_empty), Snackbar.LENGTH_SHORT)
+                .show()
         else
-            userInfoVM.saveUserPrefs(name, setCheckBox())
+            userInfoVM.saveUserPrefs(name, binding.cbShowCheckBox.isChecked)
     }
 
-    private fun setCheckBox() : Boolean {
-        return when{
-            binding.cbShowCheckBox.isChecked -> UserPreferences.SHOW_CHECKBOX
-            else -> !UserPreferences.SHOW_CHECKBOX
-        }
-    }
+
 }

@@ -29,6 +29,4 @@ class Tab1NoticeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
     }
 
-    companion object {
-    }
 }
